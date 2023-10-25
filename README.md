@@ -31,13 +31,42 @@ Upon completion of this exercise, you will be able to:
 <br>
 
 
-
 ## Introduction
 
 In this lab, you will practice working with JavaScript objects and nested data structures (arrays and objects). The theme for this lab are books, where you will need to create, manipulate, and work with an array of book objects using the syntax and concepts you learned in class.
 
 <br>
 
+## Setup
+
+- Fork this repo.
+- Clone this repo.
+
+
+<br>
+
+## Submission
+- Upon completion, run the following commands:
+
+```shell
+git add .
+git commit -m "done"
+git push origin master
+```
+
+- Create a Pull Request and submit your assignment
+
+<br>
+
+## Test Your Code
+
+This LAB is equipped with unit tests to provide automated feedback on your lab progress. In case you want to check the tests, they are in the `tests/books.spec.js` file.
+
+To run the tests and your JavaScript code, open the `SpecRunner.html` file using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VSCode extension.
+
+To see the outputs of the `console.log` in your JavaScript code, open the [Console in the Developer Tools](https://developer.chrome.com/docs/devtools/open/#console).
+
+<br>
 
 
 ## Instructions
@@ -106,6 +135,9 @@ The values of the properties should be the same as the ones in the following cod
 <br>
 
 
+----
+
+
 
 ### Iteration 2 | Book Details
 
@@ -128,6 +160,8 @@ The Art of Learning - Josh Waitzkin - 288 pages
 <br>
 
 
+----
+
 
 ### Iteration 3 | Delete Language
 
@@ -139,6 +173,9 @@ Iterate over the `booksArray`, and **delete the nested object property `language
 **Note:** You shouldn't change the `booksArray` manually, but instead, you should iterate over the array and delete the property from each book object.
 
 <br>
+
+
+----
 
 
 
@@ -157,6 +194,9 @@ Assuming a page consists of *500 words* and that the average reader reads *90 wo
 Once done, `console.log` the `booksArray` to confirm that the property has been added to each book object.
 
 <br>
+
+
+----
 
 
 ### Bonus: Iteration 5 | Books Dictionary
@@ -235,11 +275,18 @@ The **keys of the dictionary should be the authors' names**, and the values from
 
 
 
-**Hint**: You can do this in a couple of ways.<br>One way is to use the `Object.keys()` method to get the keys of the dictionary. If you need a refresher on the `Object.keys()`, check out the [MDN `Object.keys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) and the [W3Schools - JavaScript `Object.keys()`](https://www.w3schools.com/jsref/jsref_keys.asp) page.<br> 
+**Hint**: One way is to use the `Object.keys()` method to get the keys of the dictionary. Another way is to use the `for...in` loop to iterate over the keys of the dictionary.
+In case you need a refresher on the `Object.keys` or the `for...in` loop, check out the following pages:
 
-Another way is to use the `for...in` loop to iterate over the keys of the dictionary. In case you need a refresher on the `for...in` loop, check out the [MDN- `for...in`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) and the [W3Schools - JavaScript For/in](https://www.w3schools.com/js/js_loop_forin.asp) page.
+- [MDN - `Object.keys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+- [W3Schools - `Object.keys()`](https://www.w3schools.com/jsref/jsref_keys.asp)
+- [MDN - `for...in` loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+- [W3Schools - For/in](https://www.w3schools.com/js/js_loop_forin.asp)
+
 <br>
 
+
+----
 
 
 ### Bonus: Iteration 6 | Average Page Count
@@ -251,5 +298,34 @@ The formula to calculate the average page count is:
 > average page count = `sum of all books' pages` / `number of books`
 
 
+
+
 <br>
+
+Happy coding! 💙
+
+<br>
+
+## FAQs
+
+
+<details>
+  <summary>I am stuck and don't know how to solve the problem or where to start. What should I do?</summary>
+
+
+  <br>
+
+  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
+
+  For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
+
+  Once you have a clear understanding of the problem, you will be able to start working toward the solution.
+
+  <br>
+
+  [Back to top](#faqs)
+
+</details>
+
+
 
