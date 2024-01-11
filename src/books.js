@@ -74,10 +74,14 @@ console.log(booksArray);
 // Your code here:
 
 booksArray.forEach((book) => {
-  book.readingTime = parseInt((book.pages * 500) / 90) + " minutes,";
+  let readingTimeInMinutes = Math.ceil((book.pages * 500) / 90);
+  book.readingTime = readingTimeInMinutes;
 });
 
+//why is this failing the test??
+
 console.log(booksArray);
+console.log(typeof booksArray[0].readingTime);
 
 // Bonus: Iteration 5 | Books Dictionary
 
