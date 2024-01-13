@@ -60,15 +60,10 @@ function getBookDetails(book) {
   let title = book.title;
   let author = book.author;
   let pages = book.pages;
-  return "${title} ${author} ${pages] pages";
+  return `${title} ${author} ${pages} pages`;
 }
-const book6 = {
-  title: "The Art of Learning",
-  author: "Josh Waitzkin",
-  pages: 288
-};
-const bookDetails = getBookDetails(book6);
-console.log(book6);
+// function getBookDetails(book) {
+//    return `${book.title} ${book.author} ${book.pages} pages`;
 
 
 // Iteration 3 | Delete Language
