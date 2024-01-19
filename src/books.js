@@ -50,7 +50,7 @@
 const booksArray = [
   {
     title: "The Old Man and the Sea",
-    pages: 279,
+    pages: 128,
     author: "Ernest Hemingway",
     details: {
        language: "English",
@@ -101,7 +101,8 @@ const booksArray = [
 // Iteration 2 | Book Details
 function getBookDetails(book) {
   
-  return book.title +"-"+ book.author +"-"+book.pages+" pages";
+  
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 
 }
 
