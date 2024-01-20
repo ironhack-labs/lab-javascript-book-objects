@@ -7,7 +7,7 @@ const booksArray = [
       author: 'Ernest Hemingway',
       details: {
         language: 'english',
-        description: 'One of Hemingway\'s most famous works, it tells the story of Santiago...'
+        description: 'One of Hemingway\'s most famous works, it tells the story of Santiago...',
       },
     },
   {
@@ -16,7 +16,7 @@ const booksArray = [
       author: 'Leight Gallagher',
       details: {
         language: 'English',
-        description: 'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...'
+        description: 'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...',
       },
     },
 
@@ -26,7 +26,7 @@ const booksArray = [
       author: 'Jane Austen',
       details: {
         language: 'english',
-        description: 'One of the most popular novels in the English language...'
+        description: 'One of the most popular novels in the English language...',
       },
     },
 
@@ -66,19 +66,22 @@ function getBookDetails(book) {
 
 
 // Iteration 3 | Delete Language
-// Your code here:
-function deleteLanguage(bookArray) {
-  for (let i=0; i<booksArray.length; i++){
-    if ('details' in booksArray[i] && 'language' in booksArray[i].details){
-      delete booksArray[i].details.language;
-    } 
-  }
-}
+function deleteLanguage (booksArray) { 
+booksArray.forEach((book) => delete book.details.language);
+};
 
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+  
+  function readingTime (booksArray){
+    booksArray.forEach((book) => {
+    book.readingTime= Math.round((book.pages *50)/90);
+     });
+  }
+
+
+
 
 
 
