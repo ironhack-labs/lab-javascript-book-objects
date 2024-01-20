@@ -119,8 +119,11 @@ booksArray.forEach(function (book) {
 
 booksArray.forEach(function (book) {
   const readingTime = Math.round((book.pages * 500) / 90);
-  book.readingTime = readingTime;
+  book.readingTime = readingTime ;
+
 });
+
+console.log(booksArray);
 
 
 
@@ -133,18 +136,18 @@ booksArray.forEach(function (book) {
  The book info is stored in arrays with structure: [title, pages]. 
 */
 const dictionary = {
-    "J. K. Rowling": [
+    "J. K. Rowling": [ // keys
         ["Harry Potter and the Philosopher's Stone", 223],
         ["Harry Potter and the Chamber of Secrets", 251],
         ["Harry Potter and the Prisoner of Azkaban", 317],
         ["Harry Potter and the Goblet of Fire", 636],
     ],
-    "Neal Stephenson": [
-        ["Cryptonomicon", 928],
+    "Neal Stephenson": [ // key 
+        ["Cryptonomicon", 928], // 2 values
         ["Anathem", 1008],
         ["Fall; or, Dodge in Hell", 896],
     ],
-    "Malcolm Gladwell": [
+    "Malcolm Gladwell": [ // key 
         ["Outliers", 320],
         ["Blink", 287],
     ],
@@ -152,25 +155,29 @@ const dictionary = {
 
 function booksByAuthor(dictionary) {
   // Your code here:
-  const booksArray = [];
+  const bookArr = [];
 
-  for (author in dictionary) {
-    for (key in dictionary[author]) {
-      const bookData = title.pages;
+  const authors = Object.keys(dictionary);
 
-      const book = {
+  for (let i = 0; i < authors.length; i++) {
+    const author = authors[i];
+
+    const books = dictionary[author];
+
+    for (let j = 0; j < books.length; j++) {
+      const [title, pages] = books[j];
+
+      const books = {
         title: title,
-        pages: pages, 
-        author: author
-      }
+        pages: pages,
+        author: author,
+      };
 
-      booksArray.push(book);
-
+      bookArr.push(books);
     }
   }
-  return booksArray
 
-  
+  return bookArr;
 }
 
 
@@ -178,20 +185,21 @@ function booksByAuthor(dictionary) {
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount(dictionary) {
   // Your code here:
-  const average = 0
-  const sum = 0
-  const booksNumber = 0
+  let sum = 0
+  let booksNumber = 0
 
   for (let i = 0; i < dictionary.length; i++) {
   
-    booksNumber++
+    booksNumber++;
 
-    for (let j = 0; i < dictionary[i].values.length; j++) {
+    for (let j = 0; j < dictionary[i].values.length; j++) {
       sum += dictionary[i].values[j];
       
-      average = sum / booksNumber
+      
     }
   }
+
+  let average = Math.round(sum / booksNumber);
 
   return average
   
