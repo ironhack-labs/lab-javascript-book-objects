@@ -171,8 +171,8 @@ function booksByAuthor(dictionary) {
   // Your code here:
   const booksArray = [];
 
-  Object.keys(dictionary).forEach(autohr => {
-    const booksInfo = dictionary[Object.keys];
+  Object.keys(dictionary).forEach(author => {
+    const booksInfo = dictionary[author];
 
     booksInfo.forEach(([title, pages]) => {
       const bookObject = {
