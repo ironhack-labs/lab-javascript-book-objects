@@ -8,7 +8,7 @@ const booksArray = [
       details: {
         language: 'english',
         description: 'One of Hemingway\'s most famous works, it tells the story of Santiago...'
-      }
+      },
     },
   {
       title: 'The Airbnb Story',
@@ -17,7 +17,7 @@ const booksArray = [
       details: {
         language: 'English',
         description: 'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...'
-      }
+      },
     },
 
   {
@@ -27,7 +27,7 @@ const booksArray = [
       details: {
         language: 'english',
         description: 'One of the most popular novels in the English language...'
-      } 
+      },
     },
 
   {
@@ -37,7 +37,7 @@ const booksArray = [
       details: {
         language: 'english',
         description: 'Educated is an account of the struggle for self-invention...',
-      }
+      },
     },
 
   {
@@ -47,28 +47,26 @@ const booksArray = [
       details: {
         language: 'english',
         description: 'The Art of Learning takes readers through Waitzkins unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.'
-      }
+      },
     },
 ];
 
 // Iteration 2 | Book Details
 
 function getBookDetails(book) {
-  let bookTitle= '';
-  let bookAuthor= '';
-  let bookPages= 0;
+  let bookTitle = book.title;
+  let bookAuthor = book.author;
+  let bookPages= book.pages;
 
-  for (let i=0; i<booksArray.length; i++){
+  return `${bookTitle} - ${bookAuthor} - ${bookPages} pages`
 
-    if (booksArray[i].title===book){
-    bookTitle= booksArray[i].title;
-    bookAuthor= booksArray[i].author;
-    bookPages= booksArray[i].pages;
-    }
-  }
-  console.log(`${bookTitle} - ${bookAuthor} - ${bookPages} pages.`);
 }
 
+
+
+
+// Iteration 3 | Delete Language
+// Your code here:
 function deleteLanguage(bookArray) {
   for (let i=0; i<booksArray.length; i++){
     if ('details' in booksArray[i] && 'language' in booksArray[i].details){
@@ -76,11 +74,6 @@ function deleteLanguage(bookArray) {
     } 
   }
 }
-
-
-// Iteration 3 | Delete Language
-// Your code here:
-
 
 
 
