@@ -162,7 +162,7 @@ function booksByAuthor(dictionary) {
   for (let j = 0; j < dictionary[bookAuthors[i]].length; j++)
    {
     let bookObject = {};
-    const object = dictionary[bookAuthors[j]];   
+    const object = dictionary[bookAuthors[i]];   
     // console.log(object);
     bookObject.author = bookAuthors[i];
     bookObject.title = object[j][0];
