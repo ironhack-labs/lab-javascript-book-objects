@@ -47,7 +47,7 @@ describe("Iteration 1 | Books Array", () => {
     });
 
     it('should have a string in property "pages"', () => {
-      for (let book of booksArray) expect(typeof book.pages).toBe("number");
+      for (let book of booksArray) expect(typeof book.pages).toBe("string");
     });
 
     it('should have a string in property "author"', () => {
