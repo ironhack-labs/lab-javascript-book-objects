@@ -159,7 +159,7 @@ function booksByAuthor(dictionary) {
 
   for(let i=0; i<bookAuthors.length ; i++)
   {
-  for (let j = 0; j < dictionary[bookAuthors[j]].length; j++)
+  for (let j = 0; j < dictionary[bookAuthors[i]].length; j++)
    {
     let bookObject = {};
     const object = dictionary[bookAuthors[j]];   
