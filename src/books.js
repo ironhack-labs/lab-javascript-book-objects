@@ -47,13 +47,57 @@
 
 
 // Your code here:
-const booksArray = [];
+// index.js
 
+const booksArray = [
+  {
+    title: 'The Old Man and the Sea',
+    pages: 128,
+    author: 'Ernest Hemingway',
+    details:{ 
+    description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+  } },
+  {
+    title: 'The Airbnb Story',
+    pages: 256,
+    author: 'Leight Gallagher',
+    details:{ 
+    description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+  }},
+  {
+    title: 'Pride and Prejudice',
+    pages: 279,
+    author: 'Jane Austen',
+    details:{ 
+    description: "One of the most popular novels in the English language..."
+  }},
+  {
+    title: 'Educated - A Memoir',
+    pages: 352,
+    author: 'Tara Westover',
+    details:{ 
+    description: "Educated is an account of the struggle for self-invention..."
+  }},
+  {
+    title: 'The Art of Learning',
+    pages: 288,
+    author: 'Josh Waitzkin',
+    details:{ 
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+  }}
+];
+
+// You can use the booksArray as needed in your application
+console.log(booksArray);
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
+
+  let bookSelect=`${book.title} - ${book.author} - ${book.pages} pages`
+
+  return bookSelect;
   // Your code here:
 
 }
@@ -62,15 +106,29 @@ function getBookDetails() {
 
 // Iteration 3 | Delete Language
 // Your code here:
+for (let i=0; i<= booksArray.length;i++){
+  if('language' in booksArray[i]  ){ 
+  delete booksArray[i].language;
+   }
+  
+}
+ 
 
 
+console.log(booksArray) ;
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
 
+for (let i=0; i<booksArray.length;i++){
 
+
+  booksArray[i].readingTime=(booksArray[i].pages*500/90);
+}
+
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
