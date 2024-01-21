@@ -152,15 +152,34 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dict) {
   // Your code here:
-  
+  let booksArr = [];
+
+  for (let author in dict) {
+    dict[author].forEach(function(element) {
+      let book = {};
+
+      book.title = element[0];
+      book.pages = element[1];
+      book.author = author;
+
+      booksArr.push(book)
+    });
+  }
+  return booksArr;
 }
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(array) {
   // Your code here:
+  let pagesSum = 0;
   
+  array.forEach(function(element, index) {
+    pagesSum += array[index].pages
+  });
+  const averagePageCount = pagesSum / array.length;
+  return averagePageCount;
 }
