@@ -47,14 +47,95 @@
 
 
 // Your code here:
-const booksArray = [];
+
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    description: "One of Hemingway's most famous works, it tells the story of Santiago...",
+    details: {
+      language: "English",
+      description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+    }
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leight Gallagher",
+    description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
+    details: {
+      language: "English",
+      description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+    }
+  },
+  {
+    title: "Pride and Prejudice",
+    pages: 279,
+    author: "Jane Austen",
+    description: "One of the most popular novels in the English language...",
+    details: {
+      language: "English",
+      description: "One of the most popular novels in the English language..."
+    }
+  },
+  {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    description: "Educated is an account of the struggle for self-invention...",
+    details: {
+      language: "English",
+      description: "Educated is an account of the struggle for self-invention..."
+    }
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+    details: {
+      language: "English",
+      description: "The Art of Learning takes readersthrought Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+    }
+  },
+];
+
+// You can use the booksArray as needed in your application
+console.log(booksArray);
+
 
 
 
 
 // Iteration 2 | Book Details
 function getBookDetails() {
-  // Your code here:
+  // index.js
+
+const booksArray = [
+  // ... (the array of books you created)
+];
+
+function getBookDetails(book) {
+  // Destructuring to extract properties from the book object
+  const { title, pages, author, description } = book;
+
+  // Creating the formatted string
+  const detailsString = `
+    Title: ${title}
+    Pages: ${pages}
+    Author: ${author}
+    Description: ${description}
+  `;
+
+  return detailsString;
+}
+
+// Example usage:
+const bookToDisplay = booksArray[0]; // Choose any book from the array
+const bookDetails = getBookDetails(bookToDisplay);
+console.log(bookDetails);
+
 
 }
 
