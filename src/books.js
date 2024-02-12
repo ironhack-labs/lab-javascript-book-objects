@@ -106,7 +106,7 @@ function booksByAuthor(dictionary) {
   // Your code here:
   let booksArray = []
   for (author in dictionary) {
-    Object.values(dictionary[key]).forEach((element) => {
+    Object.values(dictionary[author]).forEach((element) => {
       booksArray.push({
         title: element[0],
         pages: element[1],
