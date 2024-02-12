@@ -110,7 +110,7 @@ function booksByAuthor(dictionary) {
       booksArray.push({
         title: element[0],
         pages: element[1],
-        author: key
+        author
       })
     })
   }
@@ -123,8 +123,8 @@ function averagePageCount(booksArray) {
  let totalPages = 0
 
  booksArray.forEach((element) => {
-  return   totalPages / booksArray.length
- })
+     totalPages += element.pages })
+ return   totalPages / booksArray.length
 }
 
 // average page count = `sum of all books' pages` / `number of books`
