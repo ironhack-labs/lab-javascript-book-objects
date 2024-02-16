@@ -48,7 +48,7 @@
 //add the books to the array
 // Your code here:
 const booksArray = [
-  (book1 = {
+  {
     title: "The Old man and the Sea",
     pages: 128,
     author: "Ernest Hemingway",
@@ -57,8 +57,8 @@ const booksArray = [
       description:
         "One of Hemingway's most famous works, it tells the story of Santiago...",
     },
-  }),
-  (book2 = {
+  },
+  {
     title: "The Airbnb Story",
     pages: 256,
     author: " Leight Gallagher",
@@ -67,8 +67,8 @@ const booksArray = [
       description:
         "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
     },
-  }),
-  (book3 = {
+  },
+  {
     title: "Pride and Prejudice",
     pages: 279,
     author: "Jane Austen",
@@ -76,8 +76,8 @@ const booksArray = [
       language: "English",
       description: "One of the most popular novels in the English language...",
     },
-  }),
-  (book4 = {
+  },
+  {
     title: "Educated - A Memoir",
     pages: 352,
     author: "Tara Westover",
@@ -86,8 +86,8 @@ const booksArray = [
       description:
         "Educated is an account of the struggle for self-invention...",
     },
-  }),
-  (book5 = {
+  },
+  {
     title: "The Art of Learning",
     pages: 288,
     author: "Josh Waitzkin",
@@ -96,7 +96,7 @@ const booksArray = [
       description:
         "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
     },
-  }),
+  },
 ];
 
 // Iteration 2 | Book Details
@@ -105,11 +105,28 @@ function getBookDetails(book) {
   return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
-// Iteration 3 | Delete Language
 // Your code here:
+// Iteration 3 | Delete Language
+
+function deleteLanguage(booksArray) {
+  for (let book of booksArray) {
+    if (book.details && book.details.language) {
+      delete book.details.language;
+    }
+  }
+}
+
+deleteLanguage(booksArray);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+function addProperty(booksArray, propertyName) {
+  for (let book of booksArray) {
+    book[propertyName] = Math.ceil((book.pages * 500) / 90);
+  }
+}
+
+addProperty(booksArray, "readingTime");
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -134,11 +151,29 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
-  // Your code here:
+function booksByAuthor(dictionary) {
+  let booksArray = [];
+  for (let author in dictionary) {
+    for (let book of dictionary[author]) {
+      let bookObject = {
+        title: book[0],
+        pages: book[1],
+        author: author,
+      };
+      booksArray.push(bookObject);
+    }
+  }
+  return booksArray;
 }
 
+let allBooks = booksByAuthor(dictionary);
+
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
+function averagePageCount(books) {
+  let averagePageCount = 0;
+
+  for (let book of books) {
+    averagePageCount += book.pages / books.length;
+  }
+  return averagePageCount;
 }
