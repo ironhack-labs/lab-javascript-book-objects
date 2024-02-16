@@ -127,7 +127,7 @@ getBookDetails(booksArray[4])
 //const languageKeyDel = "language"
   function deleteKeys(booksArray){
     booksArray.forEach(book =>{
-      if (book.details && 'language' in book.details){
+      if ('language' in book.details){
         delete book.details.language;
       }
     })
