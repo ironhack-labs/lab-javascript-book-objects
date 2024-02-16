@@ -108,8 +108,7 @@ const booksArray = [
 
 function getBookDetails(book) {
   // Your code here:
-  const book1 = book[0];
-  const book2 = book[1];
+
 return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
