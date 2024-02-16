@@ -54,9 +54,21 @@ const booksArray = [
   },
 ];
 
+const bookObject = {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: {
+    language: "English",
+    description:
+      "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+  },
+};
+
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(bookObject) {
   // Your code here:
+  return `${bookObject.title} - ${bookObject.author} - ${bookObject.pages} pages`;
 }
 
 // Iteration 3 | Delete Language
