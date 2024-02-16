@@ -190,10 +190,10 @@ function averagePageCount(books) {
 
   books.forEach((book) => {
     totalPages += book.pages
+    
   });
 
-  const avergaPages = totalPages / books.length;
+   return totalPages / books.length;
 
-  return avergaPages;
-  
+ 
 }
