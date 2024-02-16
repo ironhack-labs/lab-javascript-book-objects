@@ -104,8 +104,12 @@ const booksArray = [
 
 
 // Iteration 2 | Book Details
+
+
 function getBookDetails(book) {
   // Your code here:
+  const book1 = book[0];
+  const book2 = book[1];
 return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
@@ -118,12 +122,15 @@ booksArray.forEach((book) => {
 });
 
 
+
+
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
 booksArray.forEach((book) => {
   book.readingTime = Math.ceil((book.pages * 500) / 90);
 });
+
 
 
 // Bonus: Iteration 5 | Books Dictionary
@@ -156,23 +163,25 @@ function booksByAuthor(dictionary) {
   if (Object.keys(dictionary).length === 0) {
     return 'the dictionary is empty';
   }else {
-    const keys = object.keys(dictionary); // returns array of authors.
-    let output = '';
+    const authors = Object.keys(dictionary); // returns array of authors.
+    let output = [];
 
-    for (let i = 0; i <keys.length; i++) {
-      const key = keys[i];
-      const items = dictionary[key];
-      output += `${key}`;
+    for (let i = 0; i <authors.length; i++) {
+      const author = authors[i];
+      const books = dictionary[author];
+      
+      console.log(dictionary[author]);
 
-     for (let j = 0; j <items.length; j++) {
-      const item = item[j];
-      output += `${item[0]}, ${item[1]} pages\n`
+     for (let j = 0; j <books.length; j++) {
+      const book = books[j];
+      output.push ({author, title: book[0], pages: book[1]});
      }
     }
     return output;
     
   }
 }
+console.log(booksByAuthor(dictionary));
 
 
 
