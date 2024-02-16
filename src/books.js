@@ -74,8 +74,18 @@ function getBookDetails(bookObject) {
 // Iteration 3 | Delete Language
 // Your code here:
 
+booksArray.forEach((Object) => {
+  delete Object.details.language;
+});
+console.log(booksArray);
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+
+booksArray.forEach((object) => {
+  const readingTime = Math.ceil((object.pages * 500) / 90);
+  object.readingTime = readingTime;
+});
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
