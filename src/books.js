@@ -105,8 +105,6 @@ function booksByAuthor(dictionary) {
   return arr;
 }
 
-console.log(booksByAuthor(dictionary));
-
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount(arr) {
   let sum = 0;
@@ -117,5 +115,3 @@ function averagePageCount(arr) {
   }
   return sum / numberOfBooks;
 }
-
-console.log(averagePageCount(booksArray));
