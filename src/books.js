@@ -47,21 +47,82 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    details: {
+      language: "English",
+      description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+    }
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leight Gallagher",
+    details: {
+      language: "English",
+      description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+    }
+  },
+  {
+    title: "Pride and Prejudice",
+    pages: 279,
+    author: "Jane Austen",
+    details: {
+      language: "English",
+      description: "One of the most popular novels in the English language..."
+    }
+  },
+  {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details: {
+      language: "English",
+      description: "Educated is an account of the struggle for self-invention..."
+    }
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    details: {
+      language: "English",
+      description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+    }
+  }
+];
+
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(bookObject) {
   // Your code here:
+  console.log(bookObject.title);
+  console.log(bookObject.author);
+  console.log(bookObject.pages);
 
 }
 
+getBookDetails(booksArray[3]);
 
 
 // Iteration 3 | Delete Language
 // Your code here:
+
+function deleteLanguage(booksArray){
+
+    for(i = 0; i < booksArray.length; i++){
+      booksArray[i].details.language = "";
+    }
+    console.log(booksArray)
+}
+
+deleteLanguage(booksArray);
 
 
 
@@ -69,6 +130,29 @@ function getBookDetails() {
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+function calculateReadingTime(pages) {
+  // Assuming a page consists of 500 words and the average reader reads 90 words per minute
+  const wordsPerPage = 500;
+  const wordsPerMinute = 90;
+  
+  // Calculate reading time in minutes
+  return Math.round((pages * wordsPerPage) / wordsPerMinute);
+}
+
+function addReadingTime(booksArray) {
+  for (let i = 0; i < booksArray.length; i++) {
+      const book = booksArray[i];
+      const pages = book.pages;
+      
+      // Add a new property 'readingTime' to each book object
+      book.readingTime = calculateReadingTime(pages);
+  }
+
+  console.log(booksArray);
+}
+
+// Assuming the 'booksArray' is already defined with book details
+addReadingTime(booksArray);
 
 
 
