@@ -36,8 +36,8 @@ describe("Iteration 1 | Books Array", () => {
       expect(Array.isArray(booksArray)).toBe(true);
     });
 
-    it("should have 5 books", () => {
-      expect(booksArray.length).toEqual(5);
+    it("should have 4 books", () => {
+      expect(booksArray.length).toEqual(4);
     });
   });
 
@@ -93,8 +93,8 @@ describe("Iteration 3 | Delete Language", () => {
       expect(Array.isArray(booksArray)).toBe(true);
     });
 
-    it("should have 5 books", () => {
-      expect(booksArray.length).toEqual(5);
+    it("should have 4 books", () => {
+      expect(booksArray.length).toEqual(4);
     });
   });
 
@@ -115,8 +115,8 @@ describe("Iteration 4 | Estimated Reading Time", () => {
       expect(Array.isArray(booksArray)).toBe(true);
     });
 
-    it("should have 5 books", () => {
-      expect(booksArray.length).toEqual(5);
+    it("should have 4 books", () => {
+      expect(booksArray.length).toEqual(4);
     });
   });
 

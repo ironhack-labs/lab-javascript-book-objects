@@ -73,7 +73,7 @@ To see the outputs of the `console.log` in your JavaScript code, open the [Conso
 
 ### Iteration 1 | Books Array
 
-In the `index.js` file, **create an array named `booksArray`** containing **5 objects representing the books** described in the code snippet below. Each object should have the following properties:
+In the `index.js` file, **create an array named `booksArray`** containing **4 objects representing the books** described in the code snippet below. Each object should have the following properties:
 
 - `title`
 - `pages`
@@ -104,15 +104,6 @@ The values of the properties should be the same as the ones in the following cod
 // }
 
 // Book 3
-// title: Pride and Prejudice
-// pages: 279
-// author: Jane Austen
-// details: {
-//    language: English
-//    description: One of the most popular novels in the English language...
-// }
-
-// Book 4
 // title: Educated - A Memoir
 // pages: 352
 // author: Tara Westover
@@ -121,7 +112,7 @@ The values of the properties should be the same as the ones in the following cod
 //    description: Educated is an account of the struggle for self-invention...
 // }
 
-// Book 5
+// Book 4
 // title: The Art of Learning
 // pages: 288
 // author: Josh Waitzkin
@@ -141,20 +132,30 @@ The values of the properties should be the same as the ones in the following cod
 
 ### Iteration 2 | Book Details
 
-**Create a function** named **`getBookDetails()`** that takes one argument - a book object.<br>The function should **return a string** with the following format:
+**Create a function** named **`getBookDetails()`** that takes one argument - the *book* object. The function should **return a string** in the following format:
 
-
-
-**Expected Result:**
 
 ```js
-TITLE - AUTHOR - PAGES pages
+"TITLE - AUTHOR - PAGES pages"
 ```
 
-For example, if we pass a "book 4" object as an argument, the function **should return the string**:
+<br>
 
+#### Example - Input/Expected Output
+**Input:**
 ```js
-The Art of Learning - Josh Waitzkin - 288 pages
+{
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: { /*...*/ }
+}
+```
+<br>
+
+**Expected Output:**
+```js
+"The Art of Learning - Josh Waitzkin - 288 pages"
 ```
 
 <br>
@@ -291,12 +292,11 @@ In case you need a refresher on the `Object.keys` or the `for...in` loop, check 
 
 ### Bonus: Iteration 6 | Average Page Count
 
-Create a function named **`averagePageCount()`** that takes one argument - the books array. The function **should return a number** representing the average page count of all the books in the array.<br>
+Create a function named **`averagePageCount()`** that takes one argument - the books array. The function **should return a number** representing the *average page count* of all the books in the array.<br>
 
 The formula to calculate the average page count is:
 
 > average page count = `sum of all books' pages` / `number of books`
-
 
 
 
