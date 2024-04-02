@@ -77,7 +77,7 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 function getBookDetails(book) {
-  return `${book.title.toUppercase()} - ${book.author.toUppercase()} - ${book.pages} pages`;
+  return `${book.title.toUpperCase()} - ${book.author.toUpperCase()} - ${book.pages} pages`;
 }
 
 
