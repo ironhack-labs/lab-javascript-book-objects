@@ -74,7 +74,7 @@ describe("Iteration 2 | Book Details", () => {
     it('should return a string in the format "TITLE - AUTHOR - PAGES pages"', () => {
       const book1 = testBooks[0];
       const book2 = testBooks[1];
-      
+
       expect(typeof getBookDetails(testBooks[0])).toBe("string");
       expect(getBookDetails(book1)).toBe(
         `${book1.title} - ${book1.author} - ${book1.pages} pages`
@@ -132,9 +132,7 @@ describe("Iteration 4 | Estimated Reading Time", () => {
 
     it("should have the property 'readingTime' with the number of minutes it takes to read the book", () => {
       for (let book of booksArray)
-        expect(book.readingTime).toBe(
-          Math.ceil(book.pages * 500 / 90)
-        );
+        expect(book.readingTime).toBe(Math.ceil((book.pages * 500) / 90));
     });
   });
 });
@@ -160,20 +158,30 @@ describe("BONUS: Iteration 5 | Books Dictionary", () => {
 
       for (book of booksResult) {
         expect(typeof book).toBe("object");
-        expect(Array.isArray(book)).toBe(false, "-> The returned array should contain objects, not arrays");
+        expect(Array.isArray(book)).toBe(
+          false,
+          "-> The returned array should contain objects, not arrays"
+        );
 
         expect(book.title).toBeDefined();
-        expect(typeof book.title).toBe("string", '-> The returned objects should have a string property "title"');
-        
+        expect(typeof book.title).toBe(
+          "string",
+          '-> The returned objects should have a string property "title"'
+        );
+
         expect(book.pages).toBeDefined();
-        expect(typeof book.pages).toBe("number", '-> The returned objects should have a string property "pages"');
+        expect(typeof book.pages).toBe(
+          "number",
+          '-> The returned objects should have a string property "pages"'
+        );
 
         expect(book.author).toBeDefined();
-        expect(typeof book.author).toBe("string", '-> The returned objects should have a string property "author"');
-
+        expect(typeof book.author).toBe(
+          "string",
+          '-> The returned objects should have a string property "author"'
+        );
       }
-    });    
-
+    });
   });
 });
 
@@ -198,7 +206,6 @@ describe("BONUS: Iteration 6 | Average Page Count", () => {
       const averagePages = totalPages / testBooks.length;
 
       expect(result).toBe(averagePages);
-    });    
-
+    });
   });
 });
