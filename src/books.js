@@ -10,7 +10,7 @@
 // }
 
 // Book 2
-// title:  
+// title: The Airbnb Story
 // pages: 256
 // author: Leight Gallagher
 // details: {
@@ -44,8 +44,7 @@ const booksArray = [
   author: "Ernest Hemingway",
   details: {
     language: "English",
-    description: "One of Hemingway's most famous works, it tells the story of Santiago..."
-  }
+    description: "One of Hemingway's most famous works, it tells the story of Santiago..."}
   },
   {title: "The Airbnb Story",
   pages: 256, 
@@ -78,7 +77,7 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 function getBookDetails(book) {
-  return book.title.toUppercase() + " - " + book.author.toUppercase() + " - " + book.pages + "pages";
+  return `${book.title.toUppercase()} - ${book.author.toUppercase()} - ${book.pages} pages`;
 }
 
 
@@ -95,7 +94,7 @@ booksArray.forEach(function(book){
 let time=0;
 
 booksArray.forEach(function(book){
-  book.readingTime= Math.floor((book.pages * 500) / 90);
+  book.readingTime= Math.ceil((book.pages * 500) / 90);
 })
 console.log(booksArray)
 
