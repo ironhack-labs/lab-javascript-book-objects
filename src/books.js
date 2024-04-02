@@ -89,8 +89,6 @@ function getBookDetails(bookObj) {
   return `${bookObj.title} - ${bookObj.author} - ${bookObj.pages} pages`;
 }
 
-console.log(getBookDetails(booksArray[1]));
-
 // Iteration 3 | Delete Language
 // Your code here:
 booksArray.forEach((subArr) => {
@@ -103,7 +101,6 @@ booksArray.forEach((subArr) => {
 function calcReadingTime(arr) {
   return (readingTime = Math.ceil((arr.pages * 500) / 90));
 }
-console.log(calcReadingTime(booksArray[0]));
 
 booksArray.forEach((e) => {
   e.readingTime = calcReadingTime(e);
