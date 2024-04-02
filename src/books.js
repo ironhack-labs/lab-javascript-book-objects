@@ -81,15 +81,32 @@ const booksArray = [
 ];
 
 // Iteration 2 | Book Details
-function getBookDetails() {}
 
-console.log(keys);
+const book = {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+};
+
+function getBookDetails(book) {
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
+}
 
 // Iteration 3 | Delete Language
 // Your code here:
 
+for (let i = 0; i < booksArray.length; i++) {
+  delete booksArray[i].details.language;
+}
+
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+
+for (let i = 0; i < booksArray.length; i++) {
+  booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500) / 90);
+}
+
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -114,11 +131,30 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
-  // Your code here:
+function booksByAuthor(dictionary) {
+  const result = [];
+  const authors = Object.keys(dictionary);
+  for (let i = 0; i < authors.length; i++) {
+    const author = authors[i];
+    const books = dictionary[author];
+    for (let j = 0; j < books.length; j++) {
+      const bookObj = {
+        title: books[j][0],
+        pages: books[j][1],
+        author: author,
+      };
+      result.push(bookObj);
+    }
+  }
+  return result;
 }
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
+function averagePageCount(booksArray) {
+  let totalPage = 0;
+  for (let i = 0; i < booksArray.length; i++) {
+    totalPage += booksArray[i].pages;
+  }
+
+  return totalPage / booksArray.length;
 }
