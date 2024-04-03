@@ -1,3 +1,191 @@
+<details>
+  <p>
+    git information here:
+    LAB | JavaScript Book Objects
+books gif
+
+Learning Goals
+
+Introduction
+In this lab, you will practice working with JavaScript objects and nested data structures (arrays and objects). The theme for this lab are books, where you will need to create, manipulate, and work with an array of book objects using the syntax and concepts you learned in class.
+
+Setup
+Fork this repo.
+Clone this repo.
+
+Submission
+Upon completion, run the following commands:
+git add .
+git commit -m "done"
+git push origin master
+Create a Pull Request and submit your assignment
+
+Test Your Code
+This LAB is equipped with unit tests to provide automated feedback on your lab progress. In case you want to check the tests, they are in the tests/books.spec.js file.
+
+To run the tests and your JavaScript code, open the SpecRunner.html file using the Live Server VSCode extension.
+
+To see the outputs of the console.log in your JavaScript code, open the Console in the Developer Tools.
+
+Instructions
+Iteration 1 | Books Array
+In the index.js file, create an array named booksArray containing 4 objects representing the books described in the code snippet below. Each object should have the following properties:
+
+title
+pages
+author
+description
+
+The values of the properties should be the same as the ones in the following code snippet:
+
+// Book 1
+// title: The Old Man and the Sea
+// pages: 128
+// author: Ernest Hemingway
+// details: {
+// language: English
+// description: One of Hemingway's most famous works, it tells the story of Santiago...
+// }
+
+// Book 2
+// title: The Airbnb Story
+// pages: 256
+// author: Leight Gallagher
+// details: {
+// language: English
+// description: This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...
+// }
+
+// Book 3
+// title: Educated - A Memoir
+// pages: 352
+// author: Tara Westover
+// details: {
+// language: English
+// description: Educated is an account of the struggle for self-invention...
+// }
+
+// Book 4
+// title: The Art of Learning
+// pages: 288
+// author: Josh Waitzkin
+// details: {
+// language: English
+// description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
+// }
+
+Iteration 2 | Book Details
+Create a function named getBookDetails() that takes one argument - the book object. The function should return a string in the following format:
+
+"TITLE - AUTHOR - PAGES pages"
+
+Example - Input/Expected Output
+Input:
+
+{
+title: "The Art of Learning",
+pages: 288,
+author: "Josh Waitzkin",
+details: { /_..._/ }
+}
+
+Expected Output:
+
+"The Art of Learning - Josh Waitzkin - 288 pages"
+
+Iteration 3 | Delete Language
+Iterate over the booksArray, and delete the nested object property language from each book object.
+Once done, console.log the booksArray array to confirm that the property has been deleted from all the book objects.
+
+Note: You shouldn't change the booksArray manually, but instead, you should iterate over the array and delete the property from each book object.
+
+Iteration 4 | Estimated Reading Time
+Iterate over the booksArray, and add a new property readingTime to each book object.
+The value of the readingTime should be the number of minutes it will take to read the book. The number of minutes should be an integer (i.e., no decimals).
+
+Assuming a page consists of 500 words and that the average reader reads 90 words per minute, the estimated reading time for a book can be calculated using the following formula:
+
+reading time in minutes = (number of pages \* 500) / 90
+
+Once done, console.log the booksArray to confirm that the property has been added to each book object.
+
+Bonus: Iteration 5 | Books Dictionary
+For this iteration, in the books.js file we have provided you with an object named dictionaryExample.
+The dictionaryExample object contains different books grouped by the author. Each book is represented by an array containing two elements - the book title and the number of pages:
+
+/_ The `dictionaryExample` is an object containing books grouped by author.
+The book info is stored in arrays with structure: [title, pages].
+_/
+const dictionaryExample = {
+"J. K. Rowling": [
+["Harry Potter and the Philosopher's Stone", 223],
+["Harry Potter and the Chamber of Secrets", 251],
+["Harry Potter and the Prisoner of Azkaban", 317],
+["Harry Potter and the Goblet of Fire", 636],
+],
+"Neal Stephenson": [
+["Cryptonomicon", 928],
+["Anathem", 1008],
+["Fall; or, Dodge in Hell", 896],
+],
+"Malcolm Gladwell": [
+["Outliers", 320],
+["Blink", 287],
+],
+};
+
+Create a function named booksByAuthor() that takes one argument - dictionary which is an object having the same structure as the dictionaryExample shown above.
+
+The function should return an array containing the book objects with the properties :
+
+title - the title of the book (first element of the array)
+pages - the number of pages of the book (second element of the array)
+author - the author of the book (the dictionary key)
+
+For example, if we pass the above dictionaryExample object as the argument, the function should return the array of book objects:
+
+Expected Result:
+
+[
+{
+title: "Harry Potter and the Philosopher's Stone",
+pages: 223,
+author: "J. K. Rowling",
+},
+{
+title: "Harry Potter and the Chamber of Secrets",
+pages: 251,
+author: "J. K. Rowling",
+},
+{
+title: "Harry Potter and the Prisoner of Azkaban",
+pages: 317,
+author: "J. K. Rowling",
+},
+
+// ...etc.
+
+The keys of the dictionary should be the authors' names, and the values from the array should be converted to objects with the properties described above.
+
+Hint: One way is to use the Object.keys() method to get the keys of the dictionary. Another way is to use the for...in loop to iterate over the keys of the dictionary. In case you need a refresher on the Object.keys or the for...in loop, check out the following pages:
+
+MDN - Object.keys()
+W3Schools - Object.keys()
+MDN - for...in loop
+W3Schools - For/in
+
+Bonus: Iteration 6 | Average Page Count
+Create a function named averagePageCount() that takes one argument - the books array. The function should return a number representing the average page count of all the books in the array.
+
+The formula to calculate the average page count is:
+
+average page count = sum of all books' pages / number of books
+
+Happy coding! 💙
+
+  </p>
+</details>
+
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
 # LAB | JavaScript Book Objects
@@ -6,11 +194,7 @@
   <img src="https://media2.giphy.com/media/3osxYeLtSKwjXs8zU4/giphy.gif?cid=ecf05e47vvgft7vhntz40g8itnf6wl8u5pa90hwqbuxrstli&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="books gif" />
 </p>
 
-
-
 <br>
-
-
 
 <details>
   <summary>
@@ -30,7 +214,6 @@ Upon completion of this exercise, you will be able to:
 
 <br>
 
-
 ## Introduction
 
 In this lab, you will practice working with JavaScript objects and nested data structures (arrays and objects). The theme for this lab are books, where you will need to create, manipulate, and work with an array of book objects using the syntax and concepts you learned in class.
@@ -42,10 +225,10 @@ In this lab, you will practice working with JavaScript objects and nested data s
 - Fork this repo.
 - Clone this repo.
 
-
 <br>
 
 ## Submission
+
 - Upon completion, run the following commands:
 
 ```shell
@@ -67,7 +250,6 @@ To run the tests and your JavaScript code, open the `SpecRunner.html` file using
 To see the outputs of the `console.log` in your JavaScript code, open the [Console in the Developer Tools](https://developer.chrome.com/docs/devtools/open/#console).
 
 <br>
-
 
 ## Instructions
 
@@ -120,29 +302,26 @@ The values of the properties should be the same as the ones in the following cod
 //    language: English
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
-
 ```
 
 <br>
 
-
-----
-
-
+---
 
 ### Iteration 2 | Book Details
 
-**Create a function** named **`getBookDetails()`** that takes one argument - the *book* object. The function should **return a string** in the following format:
-
+**Create a function** named **`getBookDetails()`** that takes one argument - the _book_ object. The function should **return a string** in the following format:
 
 ```js
-"TITLE - AUTHOR - PAGES pages"
+"TITLE - AUTHOR - PAGES pages";
 ```
 
 <br>
 
 #### Example - Input/Expected Output
+
 **Input:**
+
 ```js
 {
   title: "The Art of Learning",
@@ -151,87 +330,74 @@ The values of the properties should be the same as the ones in the following cod
   details: { /*...*/ }
 }
 ```
+
 <br>
 
 **Expected Output:**
+
 ```js
-"The Art of Learning - Josh Waitzkin - 288 pages"
+"The Art of Learning - Josh Waitzkin - 288 pages";
 ```
 
 <br>
 
-
-----
-
+---
 
 ### Iteration 3 | Delete Language
 
 Iterate over the `booksArray`, and **delete the nested object property `language`** from each book object.<br>Once done, `console.log` the `booksArray` array to confirm that the property has been deleted from all the book objects.
 <br>
 
-
-
 **Note:** You shouldn't change the `booksArray` manually, but instead, you should iterate over the array and delete the property from each book object.
 
 <br>
 
-
-----
-
-
+---
 
 ### Iteration 4 | Estimated Reading Time
 
 Iterate over the `booksArray`, and **add a new property `readingTime` to each book object**.<br>The value of the `readingTime` should be the number of minutes it will take to read the book. The number of minutes should be an integer (i.e., no decimals).<br>
 
-Assuming a page consists of *500 words* and that the average reader reads *90 words per minute*, the estimated reading time for a book can be calculated using the following formula:<br>
+Assuming a page consists of _500 words_ and that the average reader reads _90 words per minute_, the estimated reading time for a book can be calculated using the following formula:<br>
 
-> reading time in minutes = (`number of pages` * `500`) / `90`
+> reading time in minutes = (`number of pages` \* `500`) / `90`
 
 <br>
-
-
 
 Once done, `console.log` the `booksArray` to confirm that the property has been added to each book object.
 
 <br>
 
-
-----
-
+---
 
 ### Bonus: Iteration 5 | Books Dictionary
 
 For this iteration, in the `books.js` file we have provided you with an object named `dictionaryExample`.<br>The `dictionaryExample` object contains different books grouped by the author. Each book is represented by an array containing two elements - the **book title** and the **number of pages**:
-
-
 
 ```js
 /* The `dictionaryExample` is an object containing books grouped by author. 
  The book info is stored in arrays with structure: [title, pages]. 
 */
 const dictionaryExample = {
-    "J. K. Rowling": [
-        ["Harry Potter and the Philosopher's Stone", 223],
-        ["Harry Potter and the Chamber of Secrets", 251],
-        ["Harry Potter and the Prisoner of Azkaban", 317],
-        ["Harry Potter and the Goblet of Fire", 636],
-    ],
-    "Neal Stephenson": [
-        ["Cryptonomicon", 928],
-        ["Anathem", 1008],
-        ["Fall; or, Dodge in Hell", 896],
-    ],
-    "Malcolm Gladwell": [
-        ["Outliers", 320],
-        ["Blink", 287],
-    ],
+  "J. K. Rowling": [
+    ["Harry Potter and the Philosopher's Stone", 223],
+    ["Harry Potter and the Chamber of Secrets", 251],
+    ["Harry Potter and the Prisoner of Azkaban", 317],
+    ["Harry Potter and the Goblet of Fire", 636],
+  ],
+  "Neal Stephenson": [
+    ["Cryptonomicon", 928],
+    ["Anathem", 1008],
+    ["Fall; or, Dodge in Hell", 896],
+  ],
+  "Malcolm Gladwell": [
+    ["Outliers", 320],
+    ["Blink", 287],
+  ],
 };
 ```
 
 <br>
-
-
 
 **Create a function** named **`booksByAuthor()`** that takes one argument - `dictionary` which is an object having the same structure as the `dictionaryExample` shown above.
 
@@ -270,11 +436,10 @@ For example, if we pass the above `dictionaryExample` object as the argument, th
   // ...etc.
 
 ```
+
 <br>
 
 The **keys of the dictionary should be the authors' names**, and the values from the array should be converted to objects with the properties described above.
-
-
 
 **Hint**: One way is to use the `Object.keys()` method to get the keys of the dictionary. Another way is to use the `for...in` loop to iterate over the keys of the dictionary.
 In case you need a refresher on the `Object.keys` or the `for...in` loop, check out the following pages:
@@ -286,19 +451,15 @@ In case you need a refresher on the `Object.keys` or the `for...in` loop, check 
 
 <br>
 
-
-----
-
+---
 
 ### Bonus: Iteration 6 | Average Page Count
 
-Create a function named **`averagePageCount()`** that takes one argument - the books array. The function **should return a number** representing the *average page count* of all the books in the array.<br>
+Create a function named **`averagePageCount()`** that takes one argument - the books array. The function **should return a number** representing the _average page count_ of all the books in the array.<br>
 
 The formula to calculate the average page count is:
 
 > average page count = `sum of all books' pages` / `number of books`
-
-
 
 <br>
 
@@ -308,24 +469,19 @@ Happy coding! 💙
 
 ## FAQs
 
-
 <details>
   <summary>I am stuck and don't know how to solve the problem or where to start. What should I do?</summary>
 
+  <br>
+
+If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
+
+For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources.
+
+Once you have a clear understanding of the problem, you will be able to start working toward the solution.
 
   <br>
 
-  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
-
-  For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
-
-  Once you have a clear understanding of the problem, you will be able to start working toward the solution.
-
-  <br>
-
-  [Back to top](#faqs)
+[Back to top](#faqs)
 
 </details>
-
-
-
