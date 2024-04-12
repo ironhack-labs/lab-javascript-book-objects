@@ -49,7 +49,7 @@ const booksArray = [
       language: "English",
       description: "One of Hemingway's most famous works, it tells the story of Santiago...",
     },
-    readingTime: Math.ceil(128 * 500 / 90),
+    
   },
   {
     title: "The Airbnb Story",
@@ -60,7 +60,7 @@ const booksArray = [
       description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
 
     },
-    readingTime: Math.ceil(256 * 500 / 90),
+    
   },
   {
     title: "Educated - A Memoir",
@@ -71,7 +71,7 @@ const booksArray = [
       description: "Educated is an account of the struggle for self-invention...",
 
     },
-    readingTime: Math.ceil(352 * 500 / 90),
+    
   },
   {
     title: "The Art of Learning",
@@ -81,7 +81,7 @@ const booksArray = [
       language: "English",
       description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
     },
-    readingTime: Math.ceil(288 * 500 / 90),
+    
   }
 ];
 
@@ -108,7 +108,10 @@ booksArray.forEach(book => {
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-
+booksArray.forEach(book => {
+  book.readingTime =Math.ceil(book.pages * 500 / 90)
+  
+})
      
   
 
