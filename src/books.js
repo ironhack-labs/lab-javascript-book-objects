@@ -76,11 +76,13 @@ console.log(booksArray);
 // Your code here:
 
 for(let i = 0; i<booksArray.length; i++){
-  let result = (booksArray[i].pages * 500) /90; //number
-  let resultRound = Math.ceil(result);
-  booksArray[i].readingTime = result; //rajoute le resultat dans ma propriété
-  console.log(booksArray);
+  let roundNumber;
+  readingTime = (booksArray[i].pages * 500) / 90;
+  roundNumber = Math.ceil(readingTime);
+  booksArray[i].readingTime = roundNumber;
 
+  console.log(booksArray);
+   
 }
 
 
