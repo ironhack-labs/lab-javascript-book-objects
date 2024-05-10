@@ -38,28 +38,74 @@
 
 
 // Your code here:
-const booksArray = [];
-
-
-
+const booksArray = [
+  {
+    book: 1,
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    details: {
+       language: "English",
+       description: "One of Hemingway's most famous works, it tells the story of Santiago, an aging Cuban fisherman who struggles with a giant marlin far out in the Gulf Stream."
+    }
+  },
+  {
+    book: 2,
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leigh Gallagher",
+    details: {
+       language: "English",
+       description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb, and how the company's founders changed the way we travel."
+    }
+  },
+  {
+    book: 3,
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details: {
+       language: "English",
+       description: "Educated is an account of the struggle for self-invention. It is a tale of fierce family loyalty, and of the grief that comes from severing one’s closest ties."
+    }
+  },
+  {
+    book: 4,
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    details: {
+       language: "English",
+       description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+    }
+  }
+];
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(bookObject) {
   // Your code here:
-
+  if (bookObject){
+    return `${bookObject.title} - ${bookObject.author} - ${bookObject.pages} pages`;
+  } 
 }
-
-
 
 // Iteration 3 | Delete Language
 // Your code here:
 
-
+booksArray.forEach(book =>{
+  if (book.details.language){
+    delete book.details.language;
+  }
+});
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+const readingTime = 0
+booksArray.forEach(book =>{
+  book.readingTime = ((book.pages * 500) /90);
+});
 
 
 
