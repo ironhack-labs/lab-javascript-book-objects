@@ -51,11 +51,9 @@ booksArray.push(book1, book2, book3, book4);
 
 // Iteration 2 | Book Details
 function getBookDetails(book) {
-  return `${book.title.toUpperCase()} - ${book.author.toUpperCase()} - ${
-    book.pages
-  } pages`;
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
-// console.log(getBookDetails(booksArray[0]))
+console.log(getBookDetails(booksArray[0]))
 
 
 // Iteration 3 | Delete Language
