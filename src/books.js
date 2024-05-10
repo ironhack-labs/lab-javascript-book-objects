@@ -65,10 +65,18 @@ for (let i = 0; i<booksArray.length; i++){
     }
   }
 }
-console.log(booksArray)
+//console.log(booksArray)
+
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+for (let i = 0; i<booksArray.length; i++){
+  for (let key in booksArray[i]) {
+    booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500) / 90)
+  }
+}
+// console.log(booksArray)
+
 
 // Bonus: Iteration 5 | Books Dictionary
 
