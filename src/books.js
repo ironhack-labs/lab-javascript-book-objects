@@ -53,11 +53,19 @@ booksArray.push(book1, book2, book3, book4);
 function getBookDetails(book) {
   return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
-console.log(getBookDetails(booksArray[0]))
+// console.log(getBookDetails(booksArray[0]))
 
 
 // Iteration 3 | Delete Language
 // Your code here:
+for (let i = 0; i<booksArray.length; i++){
+  for (let key in booksArray[i]) {
+    if (key === "details"){
+      delete  booksArray[i].details.language;
+    }
+  }
+}
+console.log(booksArray)
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
