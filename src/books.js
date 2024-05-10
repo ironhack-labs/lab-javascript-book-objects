@@ -83,7 +83,7 @@ for (let i = 0; i<booksArray.length; i++){
 /* The `dictionary` is an object containing books grouped by author. 
  The book info is stored in arrays with structure: [title, pages]. 
 */
-const dictionary = {
+const dictOfBooks = {
   "J. K. Rowling": [
     ["Harry Potter and the Philosopher's Stone", 223],
     ["Harry Potter and the Chamber of Secrets", 251],
@@ -101,9 +101,27 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
-  // Your code here:
+function booksByAuthor(dictionary) {
+
+  let arrOfBooks = [];
+  
+  for (let key in dictionary) {
+    
+    for (let i=0; i < dictionary[key].length; i++){
+
+      const aBook = {
+        title: dictionary[key][i][0],
+        pages: dictionary[key][i][1],
+        author: key,
+      }
+      
+      arrOfBooks.push(aBook)
+    }
+  }
+return arrOfBooks
 }
+
+console.log(booksByAuthor(dictOfBooks))
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount() {
