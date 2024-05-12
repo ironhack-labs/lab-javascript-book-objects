@@ -38,27 +38,98 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    bookNumber:1,
+    title: "The Old Man and The Sea",
+    pages: 128,
+    author: "Ernest Heemingway",
+    details:{
+      language:'English',
+      description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+    }
+  },
 
+  {
+    bookNumber:2,
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leigh Gallagher",
+    details:{
+      language:'English',
+      description: 'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...'
+    }
+  },
 
+  {
+    bookNumber:3,
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details:{
+      language:'English',
+      description: 'Educated is an account of the struggle for self-invention...'
+    }
+  },
 
+  {
+    bookNumber:4,
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    details:{
+      language:'English',
+      description: "he Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+    }
+  }
+]
 
-// Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
-
+function getBookDetails(book) {
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
+// Test with a sample book
+const chosenBook = {
+  title: 'The Old Man and The Sea',
+  author: 'Ernest Heemingway',
+  pages: 128
+};
+
+const bookDetails = getBookDetails(chosenBook);
+console.log(bookDetails);
 
 
 // Iteration 3 | Delete Language
 // Your code here:
+ 
+booksArray.forEach(book => {
+  
+  if (book.details) {
+    
+    delete book.details['language'];
+  }
+});
 
-
-
+console.log(booksArray);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+// Function to calculate reading time
+function calculateReadingTime(pages) {
+  const wordsPerPage = 500; 
+  const wordsPerMinute = 90; console.log(pages)
+  return Math.round((pages * wordsPerPage) / wordsPerMinute); 
+  
+}
+
+// Iterate over the booksArray and add a new property 'readingTime' to each book object
+booksArray.forEach(book => {
+  // Calculate the reading time for the book
+  book.readingTime = calculateReadingTime(book.pages);
+});
+
+// Check if each book object has a property 'readingTime' with a number value
+const isValid = booksArray.every(book => typeof book.readingTime === 'number');
 
 
 
