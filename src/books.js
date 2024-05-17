@@ -104,10 +104,8 @@ function deleteLanguageProperty(books) {
 function addReadingTimeProperty(books) {
   for (let i = 0; i < books.length; i++) {
     if (!books[i].readingTime) {
-      Object.defineProperty(books[i], "readingTime", {
-        value: Math.ceil((books[i].pages * 500) / 90),
-        enumerable: true,
-      });
+      book.readingTime = Math.ceil((book.pages * 500) / 90);
+      };
     }
   }
 }
