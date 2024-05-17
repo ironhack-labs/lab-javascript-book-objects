@@ -105,7 +105,6 @@ function addReadingTimeProperty(books) {
   for (let i = 0; i < books.length; i++) {
     if (!books[i].readingTime) {
       book.readingTime = Math.ceil((book.pages * 500) / 90);
-      };
     }
   }
 }
