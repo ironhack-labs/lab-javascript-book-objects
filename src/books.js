@@ -141,25 +141,31 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor(dictionary) {
-  const bookObjArr = {
-    title: [],
-    pages: [],
-    author: [],
-  };
+// function booksByAuthor(dictionary) {
+  
+//   const bookObjArr = {
+//     title: [],
+//     pages: [],
+//     author: [],
+//   };
 
-  for (let i = 0; i < dictionary.length; i++) {
-    const arr = dictionary[i];
+//   for (const keys in dictionary) {
 
-    for (let j = 0; j < arr.length; j++) {
-      const book = arr[j];
+//   }
 
-      if (dictionary.book === "title") {
-        bookObjArr.title.push(book);
-      }
-    }
-  }
-  return bookObjArr;
+  // for (let i = 0; i < dictionary.length; i++) {
+  //   const arr = dictionary[i];
+  //    if ()
+
+  //   for (let j = 0; j < arr.length; j++) {
+  //     const book = arr[j];
+
+  //     if (dictionary.book === "title") {
+  //       bookObjArr.title.push(book);
+  //     }
+  //   }
+  // }
+  // return bookObjArr;
 }
 
 // Bonus: Iteration 6 | Average Page Count
