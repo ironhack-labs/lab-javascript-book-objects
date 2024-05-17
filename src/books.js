@@ -105,7 +105,7 @@ function addReadingTimeProperty(books) {
   for (let i = 0; i < books.length; i++) {
     if (!books[i].readingTime) {
       Object.defineProperty(books[i], "readingTime", {
-        value: (books[i].pages * 500) / 90,
+        value: Math.ceil((books[i].pages * 500) / 90),
         enumerable: true,
       });
     }
@@ -159,5 +159,4 @@ function averagePageCount(booksArray) {
     totalPageCount += booksArray[i].pages;
   }
   return totalPageCount / booksArray.length;
-  return averagePageCount;
 }
