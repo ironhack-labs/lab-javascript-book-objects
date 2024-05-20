@@ -94,14 +94,27 @@ function getBookDetails(bookObj) {
   let author = bookObj.author;
   let pages = bookObj.pages;
 
+  // Destructuring keys of an object
+  // const {title, author, pages} = book
+
   return `${title} - ${author} - ${pages} pages`;
+  // return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
+
+getBookDetails(bookObj[0]); // bookObj[0].pages can access the pages in the first object inside of the array
 
 // Iteration 3 | Delete Language
 // Your code here:
+
+// For of loop
+
+// for (const aBook of booksArray){
+//   delete aBook.details.laguage
+// }
+
 booksArray.forEach((obj) => {
-  for (const unValue of booksArray) {
-    delete unValue.details.language;
+  for (const aBook of booksArray) {
+    delete aBook.details.language;
   }
 });
 console.log(booksArray);
@@ -109,6 +122,11 @@ console.log(booksArray);
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+// Another way to do it:
+/** for (const aBook of booksArray) {
+  aBook.readingTime = Math.ceil((book.pages * 500) / 90);
+}
+ */
 booksArray.forEach((book) => {
   let readingTime = Math.ceil((book.pages * 500) / 90);
   book.readingTime = readingTime;
@@ -141,8 +159,37 @@ const dictionary = {
   ],
 };
 
+// need to access author every time
+
+function booksByAuthor(dictionary) {
+  const resultArray = [];
+
+  for (const author in dict) {
+    /**
+     * author : string
+     * dict[author] : Array of Array
+     */
+    console.log(author);
+    console.log(dict[author]);
+    const arrayOfBooks = dict[author];
+
+    for (const book of arrayOfBooks) {
+      // book: [title(string), pages]
+      const singleBook = {
+        title: book[0],
+        pages: book[1],
+        author: author,
+      };
+      console.log(singleBook);
+      resultArray.push(singleBook);
+    }
+  }
+
+  return resultArray;
+}
+// MY CODE TESTS:
 // function booksByAuthor(dictionary) {
-  
+
 //   const bookObjArr = {
 //     title: [],
 //     pages: [],
@@ -153,22 +200,29 @@ const dictionary = {
 
 //   }
 
-  // for (let i = 0; i < dictionary.length; i++) {
-  //   const arr = dictionary[i];
-  //    if ()
+// for (let i = 0; i < dictionary.length; i++) {
+//   const arr = dictionary[i];
+//    if ()
 
-  //   for (let j = 0; j < arr.length; j++) {
-  //     const book = arr[j];
+//   for (let j = 0; j < arr.length; j++) {
+//     const book = arr[j];
 
-  //     if (dictionary.book === "title") {
-  //       bookObjArr.title.push(book);
-  //     }
-  //   }
-  // }
-  // return bookObjArr;
-}
+//     if (dictionary.book === "title") {
+//       bookObjArr.title.push(book);
+//     }
+//   }
+// }
+// return bookObjArr;
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
+function averagePageCount(arrayOfBooks) {
+  return sumOfPages(arrayOfBooks) / arrayOfBooks.length;
 }
+
+function sumOfPages(arrayOfBooks) {
+  let total = 0;
+  for (const book of arrayOfBooks) {
+    total += book.pages;
+  }
+}
+averagePageCount(booksArray);
