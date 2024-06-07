@@ -65,7 +65,7 @@ const booksArray = [
       description: "Educated is an account of the struggle for self-invention..."
     }
   },
-  {
+ {
     title: "The Art of Learning",
     pages: 288,
     author: "Josh Waitzkin",
@@ -75,6 +75,8 @@ const booksArray = [
     }
   }
 ];
+
+
 
 
 // Iteration 2 | Book Details
@@ -88,10 +90,14 @@ function getBookDetails(bookObject) {
 // Iteration 3 | Delete Language
 // Your code here:
 
-booksArray.forEach(function(bookObject){
-  delete bookObject.details.language;
 
-})
+booksArray.forEach(function (bookObject) {
+  delete bookObject.details.language;
+});
+
+
+
+
 console.log(booksArray);
 // Iteration 4 | Estimated Reading Time
 // Your code here:
@@ -99,7 +105,7 @@ console.log(booksArray);
 
 
 booksArray.forEach(function(bookObject) {
-  bookObject.readingTime = Math.ceil((bookObject.pages * 500) / 90)
+  bookObject.readingTime = Math.ceil((bookObject.pages * 500) / 90);
 });
 
 console.log(booksArray)
@@ -144,12 +150,20 @@ function booksByAuthor(dictionary) {
   return arrayOfDictionaryBookObjects;
 }
 
-console.log(arrayOfDictionaryBookObjects
-)
+console.log(arrayOfDictionaryBookObjects)
+
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+let sumOfAllPages = 0;
+let averagePages = 0;
+function averagePageCount(booksArray) {
   // Your code here:
-  
+  booksArray.forEach(function(book){
+    sumOfAllPages += book.pages;
+    console.log(sumOfAllPages);
+  });
+  averagePages = sumOfAllPages / booksArray.length;
+  return averagePages;
 }
+
