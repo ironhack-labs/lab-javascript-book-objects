@@ -133,8 +133,22 @@ const dictionary = {
 function booksByAuthor(dictionary) {
   // Your code here:
   
-  
+  let newDictionary = [];
+  for(let property in dictionary){
+    
+    
 
+    for(let i = 0; i < property.length; i++){
+      let newObj = {
+        title: dictionary[property][i][0],
+        pages:dictionaty[property][i][1],
+        autor: property,
+      }
+
+      newArr.push(newObj);
+    }
+  }
+  return newArr;
 }
 
 
