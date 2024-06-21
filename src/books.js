@@ -160,29 +160,12 @@ return newArr
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount(libros) {
-
- let result = []
-  
-
- for (const propety in libros){
- 
-  for(let i =0;i<libros[propety].length;i++){
-    
-   result.push(libros[propety][i][1])
-  
+function averagePageCount(books) {
+    let totalPages = 0;
+    for (let i = 0; i < books.length; i++) {
+      totalPages += books[i].pages;
+    }
+    const averagePages = totalPages / books.length;
+    return averagePages;
   }
   
-  }
-
-  let sum= 0
-
-  for(let i =0;i<result.length;i++){
-    
-    sum += result[i]
-
-  }
-  
-  return sum / result.length;
-  
-}
