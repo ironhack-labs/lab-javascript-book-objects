@@ -99,6 +99,14 @@ console.log(booksArray);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+const readTime = (pages) => {
+  return (pages * 500) / 90;
+};
+booksArray.forEach((book) => {
+  const time = readTime(book.pages);
+  book.readingTime = Math.ceil(time);
+});
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
