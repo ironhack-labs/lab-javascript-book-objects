@@ -131,9 +131,24 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dictionaryArr) {
   // Your code here:
+  const newArr = [];
+  for (let author in dictionaryArr) {
+    dictionaryArr[author].forEach((el) => {
+      const bookObj = {
+        title: el[0],
+        pages: el[1],
+        author: author,
+      };
+      newArr.push(bookObj);
+    });
+  }
+  return newArr;
 }
+
+const booksLog = booksByAuthor(dictionary);
+console.log(booksLog);
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount() {
