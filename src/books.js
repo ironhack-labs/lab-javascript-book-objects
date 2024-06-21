@@ -92,6 +92,11 @@ function getBookDetails(book) {
 // Iteration 3 | Delete Language
 // Your code here:
 
+booksArray.forEach((book) => {
+  delete book.details.language;
+});
+console.log(booksArray);
+
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
