@@ -60,16 +60,10 @@ console.log (booksArray)
 // Your code here:
 //--->>AYUDA<<----//
 
-const wordsPerPage = 500;
-const readingSpeed = 90;
-
-const readingTimeMinutes = ((booksArray.pages * wordsPerPage) / readingSpeed);
-
-booksArray.push (readingTime = readingTimeMinutes)
-
-
-
-console.log (booksArray)
+for (let i = 0; i < booksArray.length; i++) {
+  booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500) / 90);
+}
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
