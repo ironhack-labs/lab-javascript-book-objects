@@ -36,32 +36,61 @@
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
 
-
 // Your code here:
-const booksArray = [];
-
-
-
+const booksArray = [
+  {
+    title: "The Old Man and the sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    description:
+      "One of Hemingway's most famous works, it tells the story of Santiago...",
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leight Gallagher",
+    description:
+      "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
+  },
+  {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    description: "Educated is an account of the struggle for self-invention...",
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    description:
+      "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+  },
+];
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
 
+// Your code here:
+function getBookDetails(book) {
+  const { title, author, pages } = book; // Destructuring the object to get the properties
+  return `${title} - ${author} - ${pages} pages`; // Returning the formatted string
 }
-
-
 
 // Iteration 3 | Delete Language
 // Your code here:
+booksArray.forEach((book) => {
+  delete book.details.language;
+});
 
-
-
+console.log(booksArray);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+booksArray.forEach((book) => {
+  const readingTime = Math.ceil((book.pages * 500) / 90);
+  book.readingTime = readingTime;
+});
 
-
-
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -69,32 +98,74 @@ function getBookDetails() {
  The book info is stored in arrays with structure: [title, pages]. 
 */
 const dictionary = {
-    "J. K. Rowling": [
-        ["Harry Potter and the Philosopher's Stone", 223],
-        ["Harry Potter and the Chamber of Secrets", 251],
-        ["Harry Potter and the Prisoner of Azkaban", 317],
-        ["Harry Potter and the Goblet of Fire", 636],
-    ],
-    "Neal Stephenson": [
-        ["Cryptonomicon", 928],
-        ["Anathem", 1008],
-        ["Fall; or, Dodge in Hell", 896],
-    ],
-    "Malcolm Gladwell": [
-        ["Outliers", 320],
-        ["Blink", 287],
-    ],
+  "J. K. Rowling": [
+    ["Harry Potter and the Philosopher's Stone", 223],
+    ["Harry Potter and the Chamber of Secrets", 251],
+    ["Harry Potter and the Prisoner of Azkaban", 317],
+    ["Harry Potter and the Goblet of Fire", 636],
+  ],
+  "Neal Stephenson": [
+    ["Cryptonomicon", 928],
+    ["Anathem", 1008],
+    ["Fall; or, Dodge in Hell", 896],
+  ],
+  "Malcolm Gladwell": [
+    ["Outliers", 320],
+    ["Blink", 287],
+  ],
 };
 
 function booksByAuthor() {
   // Your code here:
-  
+}
+const dictionaryExample = {
+  "J. K. Rowling": [
+    ["Harry Potter and the Philosopher's Stone", 223],
+    ["Harry Potter and the Chamber of Secrets", 251],
+    ["Harry Potter and the Prisoner of Azkaban", 317],
+    ["Harry Potter and the Goblet of Fire", 636],
+  ],
+  "Neal Stephenson": [
+    ["Cryptonomicon", 928],
+    ["Anathem", 1008],
+    ["Fall; or, Dodge in Hell", 896],
+  ],
+  "Malcolm Gladwell": [
+    ["Outliers", 320],
+    ["Blink", 287],
+  ],
+};
+
+function booksByAuthor(dictionary) {
+  const booksArray = [];
+
+  for (const author in dictionary) {
+    const books = dictionary[author];
+
+    books.forEach((book) => {
+      const [title, pages] = book;
+      booksArray.push({
+        title,
+        pages,
+        author,
+      });
+    });
+  }
+
+  return booksArray;
 }
 
-
+// Testing the function with dictionaryExample
+console.log(booksByAuthor(dictionaryExample));
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+
+// Your code here:
+const averagePageCount = (array) => {
   // Your code here:
-  
-}
+  let sum = 0;
+  for (book in array) {
+    sum += array[book].pages;
+  }
+  return sum / array.length;
+};
