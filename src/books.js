@@ -64,12 +64,12 @@ for(let i =0; i<booksArray.length; i++){
   delete booksArray[i].details.language
 }
 
-
-
-
-
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+
+for (let i =0; i<booksArray.length; i++){
+
+  booksArray[i].readingTime = (Math.floor(booksArray[i].pages * 500) / 90)
+}
 
 
 
