@@ -67,8 +67,11 @@ for (i=0; i<booksArray.length;i++){
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+for(i=0; i<booksArray.length; i++) {
+  booksArray[i]["readingTime"] = Math.ceil(booksArray[i]["pages"] * 500 / 90);
+}
 
-
+console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -93,15 +96,37 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(bookDictionary) {
   // Your code here:
-  
+  const books = [];
+
+  for(key in bookDictionary) {
+    for(i=0; i<bookDictionary[key].length; i++){
+      let book = {}
+      book.title = bookDictionary[key][i][0]; //
+      book.pages = bookDictionary[key][i][1]; //
+      book.author = key;
+      books.push(book);
+    }
+    
+  }
+  return books;
 }
 
+booksByAuthor(dictionary);
+console.log("--------");
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(booksArr) {
   // Your code here:
-  
+  let average = 0;
+  let num = 0;
+  for(i=0; i<booksArr.length; i++){
+    //console.log(booksArr[i]);
+    num += booksArr[i].pages;
+    //console.log(booksArr[i].pages);
+  }
+  average = num / booksArr.length;
+  return average;
 }
