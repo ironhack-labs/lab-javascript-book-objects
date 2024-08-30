@@ -88,7 +88,9 @@ function getBookDetails(book) {
 
 
 // Iteration 3 | Delete Language
-// Your code here:
+for (let i = 0; i<booksArray.length; i++){
+  delete booksArray[i].details.language;
+}
 
 
 
