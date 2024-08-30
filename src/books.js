@@ -95,7 +95,7 @@ for (let i = 0; i < booksArray.length; i++) {
     booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500) / 90);
 }
 
-console.log(booksArray);
+//console.log(booksArray);
 // Bonus: Iteration 5 | Books Dictionary
 
 /* The `dictionary` is an object containing books grouped by author. 
@@ -118,12 +118,39 @@ const dictionary = {
     ["Blink", 287],
   ],
 };
+//console.log("esto es", dictionary["J. K. Rowling"][0][0])
+//dictionary["J. K. Rowling"] -> Devuelve array con los 4 libros
+//dictionary["J. K. Rowling"] [0]-> Devuelve ["Harry Potter and the Philosopher's Stone", 223]
+//dictionary["J. K. Rowling"] [0][0]-> Devuelve "Harry Potter and the Philosopher's Stone"
 
-function booksByAuthor() {
-  // Your code here:
+/*  for(let i = 0; i<dictionary["J. K. Rowling"].length; i++){
+    result.push({
+      title: dictionary["J. K. Rowling"][i][i],
+      pages: dictionary["J. K. Rowling"][i][i+1],
+      author: dictionary["J. K. Rowling"][i][i+2],
+    })
+  }*/
+
+function booksByAuthor(dictionary) {
+  let result=[]
+  for (let dicAuthor in dictionary){
+    for(let i = 0; i<dictionary[dicAuthor].length; i++){
+      result.push({
+        title: dictionary[author][i][i],
+        pages: dictionary[author][i][i+1], 
+        author: dictionary[author][i][i+2]
+      });
+    }
+  }
+  //console.log ("tipo", typeof result);
+  return result;
 }
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
+function averagePageCount(arrBooks) {
+  sum=0;
+  for (let i = 0; i < arrBooks.length; i++){
+    sum+=arrBooks[i].pages;
+  }
+  return sum/arrBooks.length;
 }
