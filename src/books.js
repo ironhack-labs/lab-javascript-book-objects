@@ -45,18 +45,25 @@ const booksArray = [{title: "The Old Man and the Sea", pages: 352, author:"Ernes
 ];
 
 
-
-
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
+function getBookDetails(book) {
+  
+  
+  let info =  `${book.title} - ${book.author} - ${book.pages} pages`; 
 
+  return info
 }
+
+console.log(getBookDetails(booksArray[0]))
 
 
 
 // Iteration 3 | Delete Language
-// Your code here:
+for(let i =0; i<booksArray.length; i++){
+
+  delete booksArray[i].details.language
+}
+
 
 
 
