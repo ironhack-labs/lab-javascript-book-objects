@@ -137,8 +137,8 @@ function booksByAuthor(diccionario) {
   }
   return(biblioteca)
 }
-console.log(booksByAuthor(dictionary))
-
+// console.log(booksByAuthor(dictionary))
+// console.log(0)
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount(libros) {
