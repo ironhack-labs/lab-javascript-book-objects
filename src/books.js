@@ -136,13 +136,13 @@ function booksByAuthor(dictionary) {
   for (let dicAuthor in dictionary){
     for(let i = 0; i<dictionary[dicAuthor].length; i++){
       result.push({
-        title: dictionary[author][i][i],
-        pages: dictionary[author][i][i+1], 
-        author: dictionary[author][i][i+2]
+        title: dictionary[dicAuthor][i][0],
+        pages: dictionary[dicAuthor][i][1], 
+        author: dicAuthor
       });
     }
   }
-  //console.log ("tipo", typeof result);
+  console.log ("tipo", typeof result, result);
   return result;
 }
 
