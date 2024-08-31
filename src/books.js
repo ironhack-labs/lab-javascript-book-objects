@@ -169,7 +169,22 @@ console.log(booksOrderedByAuthor[8].pages)
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
+// average page count = sum of all books' pages / number of books
+
+function averagePageCount(booksArr) {
+
+  let sumTotalPages = 0 // total pages variable declared & initialized in 0
+
+  for (let i = 0; i < booksArr.length; i++) { // loop to go over the array (booksArr)
+
+    sumTotalPages += booksArr[i].pages // all pages for each book are summed up to the variable sumTotalPages
+  }
+
+  let averagePages = Math.round(sumTotalPages / booksArr.length) // given formula used to calculate the average pages using the array length to calculate total books) 
   
+  return averagePages
+
 }
+
+console.log(`the average number of pages is ${averagePageCount(booksOrderedByAuthor)}`)
+console.log(`the average number of pages is ${averagePageCount(booksArray)}`)
