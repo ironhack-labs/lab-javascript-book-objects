@@ -112,7 +112,7 @@ console.log(booksArray)
 /* The `dictionary` is an object containing books grouped by author. 
  The book info is stored in arrays with structure: [title, pages]. 
 */
-const dictionary = {
+const dictionaryExample = { // const name changed according to exercise requirements
     "J. K. Rowling": [
         ["Harry Potter and the Philosopher's Stone", 223],
         ["Harry Potter and the Chamber of Secrets", 251],
@@ -130,10 +130,41 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
+console.log(Object.keys(dictionaryExample))
+console.log(Object.values(dictionaryExample))
+
+
+// function starts here
+function booksByAuthor(dictionary) {
   
+  let newBooksArray = [] // new array consistent of the data extracted from (dictionary)
+
+  for (let author in dictionary) { // ~> for (const property in object) { ==> it access the keys of the object, which here are the author 
+    
+    let booksAuthor = dictionary[author]; // variable books declare an initialized as the different arrays of books by author in the object dictionary
+
+    for (let i = 0; i < booksAuthor.length; i++) { // iterates over each array of books 
+
+      let bookObject = {
+        title: booksAuthor[i][0],
+        pages: booksAuthor[i][1],
+        author: author
+      };
+
+      newBooksArray.push(bookObject);
+    }
+  }
+
+  return newBooksArray  
 }
+
+console.log(booksByAuthor(dictionaryExample))
+
+// test
+let booksOrderedByAuthor = booksByAuthor(dictionaryExample)
+
+console.log(booksOrderedByAuthor[0].title)
+console.log(booksOrderedByAuthor[8].pages)
 
 
 
