@@ -36,8 +36,6 @@
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
 
-
-// Your code here:
 const booksArray = [
   {
     title: "The Old Man and the Sea",
@@ -77,15 +75,17 @@ const booksArray = [
   }
 ];
 
-
+console.log(booksArray)
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
+function getBookDetails(book) {
+  let bookDetails = `${book.title} - ${book.author} - ${book.pages} pages`;
 
+  return bookDetails;
 }
 
+console.log(getBookDetails(booksArray[0]));
 
 
 // Iteration 3 | Delete Language
