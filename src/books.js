@@ -181,7 +181,7 @@ function averagePageCount(booksArr) {
   }
 
   let averagePages = Math.round(sumTotalPages / booksArr.length) // given formula used to calculate the average pages using the array length to calculate total books) 
-  
+                                                                 // Math.round applied to avoid decimals
   return averagePages
 
 }
