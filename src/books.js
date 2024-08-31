@@ -90,21 +90,22 @@ console.log(getBookDetails(booksArray[0]));
 
 // Iteration 3 | Delete Language
 
-for (let i = 0; i < booksArray.length; i++) { // loop to iterate over the array
-  delete booksArray[i].details.language
+for (let i = 0; i < booksArray.length; i++) {
+  // loop to iterate over the array
+  delete booksArray[i].details.language;
 }
 
-console.log(booksArray)
+console.log(booksArray);
 
 
 // Iteration 4 | Estimated Reading Time
 // reading time in minutes = (number of pages * 500) / 90
 
 for (let i = 0; i < booksArray.length; i++) {
-  booksArray[i].readingTime = Math.ceil(booksArray[i].pages * 500 / 90) // Math.round to return an int changed to Math.ceil to match requirements
+  booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500) / 90); // Math.round to return an int changed to Math.ceil to match requirements
 }
 
-console.log(booksArray)
+console.log(booksArray);
 
 
 // Bonus: Iteration 5 | Books Dictionary
@@ -172,18 +173,17 @@ console.log(booksOrderedByAuthor[8].pages)
 // average page count = sum of all books' pages / number of books
 
 function averagePageCount(booksArr) {
+  let sumTotalPages = 0; // total pages variable declared & initialized in 0
 
-  let sumTotalPages = 0 // total pages variable declared & initialized in 0
+  for (let i = 0; i < booksArr.length; i++) {
+    // loop to go over the array (booksArr)
 
-  for (let i = 0; i < booksArr.length; i++) { // loop to go over the array (booksArr)
-
-    sumTotalPages += booksArr[i].pages // all pages for each book are summed up to the variable sumTotalPages
+    sumTotalPages += booksArr[i].pages; // all pages for each book are summed up to the variable sumTotalPages
   }
 
-  let averagePages = Math.round(sumTotalPages / booksArr.length) // given formula used to calculate the average pages using the array length to calculate total books) 
-                                                                 // Math.round applied to avoid decimals
-  return averagePages
-
+  let averagePages = Math.round(sumTotalPages / booksArr.length); // given formula used to calculate the average pages using the array length to calculate total books)
+  // Math.round applied to avoid decimals
+  return averagePages;
 }
 
 console.log(`the average number of pages is ${averagePageCount(booksOrderedByAuthor)}`)
