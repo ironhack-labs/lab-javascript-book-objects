@@ -89,9 +89,12 @@ console.log(getBookDetails(booksArray[0]));
 
 
 // Iteration 3 | Delete Language
-// Your code here:
 
+for (let i = 0; i < booksArray.length; i++) { // loop to iterate over the array
+  delete booksArray[i].details.language
+}
 
+console.log(booksArray)
 
 
 // Iteration 4 | Estimated Reading Time
