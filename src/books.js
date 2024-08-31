@@ -149,6 +149,17 @@ function booksByAuthor(dicionario) {
 booksByAuthor(dictionary)
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(libros) {
+  let totalPages = 0
+  for (let i = 0; i < libros.length; i++) {
+    let libro = libros[i]
+    totalPages += libro.pages
+  }
+  console.log(totalPages)
+  let promedio = totalPages / libros.length
+
+  console.log(promedio)
+  return Math.trunc(promedio)
   // Your code here:
 }
+averagePageCount(booksArray)
