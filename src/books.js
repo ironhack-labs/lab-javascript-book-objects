@@ -98,9 +98,13 @@ console.log(booksArray)
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+// reading time in minutes = (number of pages * 500) / 90
 
+for (let i = 0; i < booksArray.length; i++) {
+  booksArray[i].readingTime = Math.ceil(booksArray[i].pages * 500 / 90) // Math.round to return an int changed to Math.ceil to match requirements
+}
 
+console.log(booksArray)
 
 
 // Bonus: Iteration 5 | Books Dictionary
