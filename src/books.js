@@ -86,11 +86,23 @@ const booksArray = [
 // Iteration 2 | Book Details
 function getBookDetails(book) {
   // Your code here:
- result = Object.values(book)
- return result
+ 
+
+for(let key in book){
+ 
+  if (key === "title"){
+    return book["title"]
+  }
+ else if (key === "author"){
+  return book ["author"]
+ }else if (key ==="pages"){
+  return book ["pages"]
+ }
+  
+ 
 }
-
-
+return `${book["title"]}, ${book["author"]},${book["pages"]}`
+}
 
 // Iteration 3 | Delete Language
 // Your code here:
@@ -98,16 +110,15 @@ delete booksArray[0]["details"]["language"]
 delete booksArray[1]["details"]["language"]
 delete booksArray[2]["details"]["language"]
 delete booksArray[3]["details"]["language"]
-
 console.log(booksArray[0].readingTime)
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-booksArray[0]["readingTime"] = Math.trunc(booksArray[0].pages * 500)/90
-booksArray[1]["readingTime"] = Math.trunc(booksArray[1].pages * 500)/90
-booksArray[2]["readingTime"] = Math.trunc(booksArray[2].pages * 500)/90
-booksArray[3]["readingTime"] = Math.trunc(booksArray[3].pages * 500)/90
+booksArray[0]["readingTime"] = ((booksArray[0].pages * 500)/90).toFixed(0) 
+booksArray[1]["readingTime"] = ((booksArray[1].pages * 500)/90).toFixed(0) 
+booksArray[2]["readingTime"] = ((booksArray[2].pages * 500)/90).toFixed(0)
+booksArray[3]["readingTime"] = ((booksArray[3].pages * 500)/90).toFixed(0)
 
 console.log(booksArray[0].readingTime)
 
@@ -137,6 +148,7 @@ const dictionary = {
 
 function booksByAuthor() {
   // Your code here:
+  
   
 }
 
