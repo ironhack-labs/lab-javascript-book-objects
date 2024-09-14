@@ -104,6 +104,8 @@ booksArray.forEach(book =>{
   if(book.details.language){
     delete book.details.language;
   }
+
+  console.log(booksArray);
 })
 
 
@@ -112,7 +114,9 @@ booksArray.forEach(book =>{
 // Your code here:
 booksArray.forEach(book =>{
   let readingTime = Math.ceil((book.pages * 500) / 90);
-  book.readingTime= readingTime; 
+  book.readingTime= readingTime;
+
+  console.log(booksArray); 
 })
 
 
