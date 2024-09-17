@@ -63,7 +63,7 @@ function getBookDetails(book) {
   let bookDetails = book.title + " - " + book.author + " - " + book.pages + " pages";
   return bookDetails;
 }
-console.log(getBookDetails(book));
+// console.log(getBookDetails(book));
 
 
 
@@ -88,7 +88,7 @@ for(let i = 0; i < booksArray.length; i++) {
   test.readingTime = Math.ceil((test.pages * 500) / 90);
 };
 
-console.log(booksArray);
+// console.log(booksArray);
 
 
 
@@ -98,32 +98,53 @@ console.log(booksArray);
  The book info is stored in arrays with structure: [title, pages]. 
 */
 const dictionary = {
-    "J. K. Rowling": [
-        ["Harry Potter and the Philosopher's Stone", 223],
-        ["Harry Potter and the Chamber of Secrets", 251],
-        ["Harry Potter and the Prisoner of Azkaban", 317],
-        ["Harry Potter and the Goblet of Fire", 636],
-    ],
-    "Neal Stephenson": [
-        ["Cryptonomicon", 928],
-        ["Anathem", 1008],
-        ["Fall; or, Dodge in Hell", 896],
-    ],
+    // "J. K. Rowling": [
+    //     ["Harry Potter and the Philosopher's Stone", 223],
+    //     ["Harry Potter and the Chamber of Secrets", 251],
+    //     ["Harry Potter and the Prisoner of Azkaban", 317],
+    //     ["Harry Potter and the Goblet of Fire", 636],
+    // ],
+    // "Neal Stephenson": [
+    //     ["Cryptonomicon", 928],
+    //     ["Anathem", 1008],
+    //     ["Fall; or, Dodge in Hell", 896],
+    // ],
     "Malcolm Gladwell": [
         ["Outliers", 320],
         ["Blink", 287],
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(booksByAuthor) {
+  let output = [];
+
+  for (author in booksByAuthor) {
+    let books = booksByAuthor[author];
+
+    for (let i=0; i < books.length; i++) {
+      output.push(
+        {
+          title: books[i][0],
+          pages: books[i][1],
+          author: author
+        }
+      );
+    }
+  };
+
+  return output;
 }
 
-
-
+let booksArr = booksByAuthor(dictionary);
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(arr) {
+  let counter = 0;
+  for(let i = 0; i < arr.length; i++) {
+    counter += arr[i].pages;
+  }
+  let averagePageCount = Math.floor(counter / arr.length);
+  return averagePageCount;
 }
+
+console.log(averagePageCount(booksArr));
+
