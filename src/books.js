@@ -53,6 +53,7 @@ function getBookDetails(book) {
 
 
 // Iteration 3 | Delete Language
+
 // Your code here:
 
 booksArray.forEach(book => {
@@ -70,8 +71,15 @@ booksArray.forEach(book => {
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
-
-
+booksArray.forEach(book => {
+  // console.log(typeof(book.pages)); 
+  const minReadingTime= Math.round(book.pages * 500 /90)
+  console.log("minReadingTime: ",minReadingTime);
+  book["readingTime"]= minReadingTime
+});
+booksArray.forEach(book => {
+  console.log(book);
+});
 
 // Bonus: Iteration 5 | Books Dictionary
 
