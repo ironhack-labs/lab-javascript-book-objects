@@ -73,9 +73,9 @@ booksArray.forEach(book => {
 
 booksArray.forEach(book => {
   // console.log(typeof(book.pages)); 
-  const minReadingTime= Math.round(book.pages * 500 /90)
-  console.log("minReadingTime: ",minReadingTime);
-  book["readingTime"]= minReadingTime
+  //const minReadingTime= Math.round(book.pages * 500 /90)
+  //console.log("minReadingTime: ",minReadingTime);
+  book["readingTime"]= Math.ceil(book.pages * 500 /90)
 });
 booksArray.forEach(book => {
   console.log(book);
