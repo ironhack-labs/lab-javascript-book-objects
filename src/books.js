@@ -55,8 +55,17 @@ function getBookDetails(book) {
 // Iteration 3 | Delete Language
 // Your code here:
 
-
-
+booksArray.forEach(book => {
+  for (const keys in book) {
+    if (keys === "details") {
+      for (const key in book[keys]) {
+        if (key === "language") {
+          delete book[keys][key]
+        }
+      }
+    }
+  }
+});
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
