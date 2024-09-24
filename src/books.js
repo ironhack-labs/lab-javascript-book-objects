@@ -38,28 +38,58 @@
 
 
 // Your code here:
-const booksArray = [];
+class BookDetails{
+    constructor(language, description) {
+        this.language = language;
+        this.description = description;
+    }
+}
+class Book {
+    constructor(title, pages, author, details) {
+        this.title = title;
+        this.pages = pages;
+        this.author = author;
+        this.details = details;
+    }
+}
+
+const desc1 = "One of Hemingway's most famous works, it tells the story of Santiago..."
+const desc2 = "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+const desc3 = "Educated is an account of the struggle for self-invention..."
+const desc4 = "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.";
+const booksArray = [
+    new Book("The Old Man and the Sea", 128, "Ernest Hemingway", new BookDetails("English", desc1)),
+    new Book("The Airbnb Story", 256, "Leight Gallagher", new BookDetails("English", desc2)),
+    new Book("Educated - A Memoir", 352, "Tara Westover", new BookDetails("English", desc3)),
+    new Book("The Art of Learning", 352, "Josh Waitzkin", new BookDetails("English", desc4)),
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
-
+function getBookDetails(book) {
+    // Your code here:
+    return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
 
 
 // Iteration 3 | Delete Language
 // Your code here:
-
+booksArray.forEach(book => {
+    delete book.details.language;
+});
+console.log(booksArray);
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-
+booksArray.forEach(book => {
+    book["readingTime"] = Math.ceil((book.pages * 500) / 90);
+});
+console.log(booksArray);
 
 
 
@@ -86,15 +116,26 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(dic) {
+    // Your code here:
+    const authorKeys = Object.keys(dic);
+    const bookObjects = [];
+    for (let i = 0; i < authorKeys.length; i++) {
+        const author = authorKeys[i];
+        const books = dic[author];
+        books.forEach(element => {
+            bookObjects.push(new Book(element[0], element[1], author, null));
+        });            
+    }
+    return bookObjects;
 }
+booksByAuthor(dictionary);
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(books) {
+    // Your code here:
+    return books.reduce((accumulator, current) => accumulator + current.pages, 0) / books.length;
 }
+console.log(averagePageCount(booksByAuthor(dictionary)));
