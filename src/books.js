@@ -83,8 +83,6 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 function getBookDetails(book) {
-
-
   // Your code here:
   return (`${book.title} - ${book.author} - ${book.pages} pages`);
 }
@@ -166,9 +164,6 @@ function booksByAuthor(dictionary) {
   }
   return booksArray;
 }
-
-booksByAuthor(dictionary);
-
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount(booksArray) {
