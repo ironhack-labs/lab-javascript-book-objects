@@ -49,9 +49,9 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 function getBookDetails(books) {
-	const title = books[0].title;
-	const author = books[0].author;
-	const pages = books[0].pages;
+	const title = books.title;
+	const author = books.author;
+	const pages = books.pages;
 	return `${title} - ${author} - ${pages} pages`;
 }
 
