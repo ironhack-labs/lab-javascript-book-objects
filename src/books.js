@@ -103,7 +103,7 @@ booksArray.forEach(book => {
   book.readingTime = Math.ceil((book.pages * 500) / 90)
 });
 
-console.log(booksArray)
+console.log(booksArray);
 
 
 // Bonus: Iteration 5 | Books Dictionary
@@ -129,11 +129,23 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+const arrayOfBooks = [];
+const arrayOfAuthors = Object.keys(dictionary);
+console.log(arrayOfAuthors);
+function booksByAuthor(dictionary) {
   // Your code here:
-  
+  let currentAuthor = 0;
+  for (let author in dictionary) {
+    dictionary[author].forEach(book => {
+      arrayOfBooks.push({title: book[0], pages: book[1], author: arrayOfAuthors[currentAuthor]})
+    }); 
+    currentAuthor ++;
+  }
+  return arrayOfBooks;
 }
-
+booksByAuthor(dictionary)
+console.log("*****")
+console.log(arrayOfBooks);
 
 
 // Bonus: Iteration 6 | Average Page Count
