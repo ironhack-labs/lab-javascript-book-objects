@@ -111,7 +111,7 @@ console.log(booksArray);
 /* The `dictionary` is an object containing books grouped by author. 
  The book info is stored in arrays with structure: [title, pages]. 
 */
-const dictionary = {
+const dictionary1 = {
     "J. K. Rowling": [
         ["Harry Potter and the Philosopher's Stone", 223],
         ["Harry Potter and the Chamber of Secrets", 251],
@@ -129,11 +129,12 @@ const dictionary = {
     ],
 };
 
-const arrayOfBooks = [];
-const arrayOfAuthors = Object.keys(dictionary);
-console.log(arrayOfAuthors);
+
 function booksByAuthor(dictionary) {
   // Your code here:
+  const arrayOfAuthors = Object.keys(dictionary);
+  const arrayOfBooks = [];
+  console.log(arrayOfAuthors);  
   let currentAuthor = 0;
   for (let author in dictionary) {
     dictionary[author].forEach(book => {
@@ -141,11 +142,26 @@ function booksByAuthor(dictionary) {
     }); 
     currentAuthor ++;
   }
+  console.log("ARRAY OF BOOKS:",arrayOfBooks);
+  
   return arrayOfBooks;
 }
-booksByAuthor(dictionary)
+
+
+/* const testDictionary = {
+  "Noah Yuval Harari": [
+    ["Sapiens: A Brief History of Humankind", 443],
+    ["Homo Deus: A Brief History of Tomorrow", 489],
+  ],
+  "Richard Dawkins": [
+    ["The Selfish Gene", 496],
+    ["The Greatest Show on Earth", 528],
+  ],
+}; */
+
+;
 console.log("*****")
-console.log(arrayOfBooks);
+console.log(booksByAuthor(dictionary1));
 
 
 // Bonus: Iteration 6 | Average Page Count
