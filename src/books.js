@@ -148,24 +148,11 @@ function booksByAuthor(dictionary) {
 }
 
 
-/* const testDictionary = {
-  "Noah Yuval Harari": [
-    ["Sapiens: A Brief History of Humankind", 443],
-    ["Homo Deus: A Brief History of Tomorrow", 489],
-  ],
-  "Richard Dawkins": [
-    ["The Selfish Gene", 496],
-    ["The Greatest Show on Earth", 528],
-  ],
-}; */
-
-;
-console.log("*****")
-console.log(booksByAuthor(dictionary1));
-
-
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(booksArray) {
   // Your code here:
-  
+  const numberOfBooks = booksArray.length;
+  let booksPageSum = 0;
+  booksArray.forEach(book => booksPageSum += book.pages)
+  return booksPageSum / numberOfBooks;
 }
