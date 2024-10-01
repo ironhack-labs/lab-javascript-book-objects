@@ -85,7 +85,7 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 function getBookDetails(books) {
-  return `${books.title} - ${books.author} - ${books.pages} pages `;
+  return `${books.title} - ${books.author} - ${books.pages} pages`;
 }
 
 console.log(getBookDetails(booksArray[3]));
