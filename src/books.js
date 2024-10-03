@@ -79,11 +79,11 @@ const booksArray = [book1, book2, book3, book4];
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
-
+function getBookDetails(book) {
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
+console.log(getBookDetails(book1));
 
 
 // Iteration 3 | Delete Language
