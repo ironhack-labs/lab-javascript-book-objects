@@ -93,6 +93,12 @@ console.log(getBookDetails(book1));
 
 // Iteration 3 | Delete Language
 // Your code here:
+for (let i = 0; i < booksArray.length; i++) {
+  const book = booksArray[i];
+  delete book.details.language;
+  console.log(Object.keys(book));
+}
+
 
 
 
