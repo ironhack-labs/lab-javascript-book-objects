@@ -77,7 +77,7 @@ const booksArray = [ {title: "The Old Man and the Sea",
              description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
             }
 }
-]
+]; 
 
 
 
@@ -126,8 +126,46 @@ book =  {
 
 
 
-// Iteration 4 | Estimated Reading Time
+/* Iteration 4 | Estimated Reading Time: 
+
+    Iterate over the booksArray, and add a new property readingTime to each book object.
+  The value of the readingTime should be the number of minutes it will take to read the book. The number of minutes should be an integer (i.e., no decimals).
+
+  Assuming a page consists of 500 words and that the average reader reads 90 words per minute, the estimated reading time for a book can be calculated using the following formula:
+
+  reading time in minutes = (number of pages * 500) / 90
+
+
+  Once done, console.log the booksArray to confirm that the property has been added to each book object.
+*/
+
 // Your code here:
+
+
+
+/* Con ForEach
+booksArray.forEach(book => { 
+
+  const totalWords = book.pages * 500;  
+  const time = Math.ceil(totalWords / 90); 
+  book.readingTime = time;                                
+}); 
+
+*/
+  for (let i = 0; i < booksArray.length; i++) {
+  
+   const wordsPerPage = 500; //Palabras por página.  
+   
+   const readingSpeed = 90; //Palabras por minuto. 
+   
+   const readingTime = (booksArray[i].pages * wordsPerPage) / readingSpeed; //Aplico la fórmula por cada libro del array.
+   
+   booksArray[i].readingTime = Math.ceil(readingTime); // Con esto eliminamos los decimales. 
+
+    }
+ 
+   console.log(booksArray);
+
 
 
 
