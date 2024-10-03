@@ -140,7 +140,7 @@ function booksByAuthor(dictionaryExample) {
     const author = authors[i];  // Recorro uno a uno los autores
     const books = dictionaryExample[author];  // Accedo al array de libros que tiene cada autor
     for (let j = 0; j < books.length; j++) {
-      const book = books[j];
+      const book = books[j];  // Almaceno en book cada libro de la lista, que tiene el nombre del título y las páginas
       const title = book[0];
       const pages = book[1];
 
@@ -156,7 +156,11 @@ function booksByAuthor(dictionaryExample) {
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(arrayOfBooks) {
+  let sumOfAllBooks = 0;
+  for (let i = 0; i < arrayOfBooks.length; i++) {
+    const book = arrayOfBooks[i];
+    sumOfAllBooks += book.pages;
+  }
+  return sumOfAllBooks / arrayOfBooks.length;
 }
