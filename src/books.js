@@ -51,7 +51,7 @@ const booksArray = [
 
   {
     title: `The Airbnb Story`,
-    pages: 128,
+    pages: 256,
     author: `Leight Gallagher`,
     details: {
       language: `English`,
