@@ -101,7 +101,7 @@ console.log(booksArray)
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 for (let i = 0; i < booksArray.length; i++){
-  const readingTime = Math.ceil((book.pages * 500/90));
+  const readingTime = Math.ceil((booksArray[i].pages * 500) /90);
   booksArray[i].readingTime = readingTime;
 }
 console.log(booksArray);
