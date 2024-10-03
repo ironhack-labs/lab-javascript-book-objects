@@ -135,10 +135,26 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
+function booksByAuthor(dictionary) {
+  const booksArray = [];
+  for (const author in dictionary) {
+    if (dictionary.hasOwnProperty(author)) {
+    const books = dictionary[author];
+    for (let i = 0; i < books.length; i++) {
+      const bookObject = {
+        title: books[i][0],
+        pages: books[i][1],
+        author: author
+      };
+      booksArray.push(bookObject);
+      }
+    }
+  }
+  return booksArray;
   
 }
+
+console.log(result);
 
 
 
