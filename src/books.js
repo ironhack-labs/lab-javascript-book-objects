@@ -77,9 +77,9 @@ booksArray.forEach(book => {
   //console.log("minReadingTime: ",minReadingTime);
   book["readingTime"]= Math.ceil(book.pages * 500 /90)
 });
-booksArray.forEach(book => {
-  console.log(book);
-});
+// booksArray.forEach(book => {
+//   console.log(book);
+// });
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -104,11 +104,26 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dictionary) {
   // Your code here:
-
+  arrayToReturn=[];
+  for (const key in dictionary) {
+    // console.log(dictionary[key]);
+    const author = key;
+    dictionary[key].forEach( element => {
+      // console.log("Dentro del forEach");
+      arrayToReturn.push({
+        title: element[0],
+        pages: element[1],
+        author: key,
+      })
+      // console.log("Fuera del forEach");
+    }
+  );
+  }
+  return arrayToReturn;
 }
-
+// booksByAuthor(dictionary);
 
 
 // Bonus: Iteration 6 | Average Page Count
