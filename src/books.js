@@ -78,9 +78,10 @@ const booksArray = [
       description: `The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.`
     }
   },   
-]
-
-
+];for (let i = 0; i < booksArray.length; i++) {
+  const book = booksArray[i];
+  delete book.details.language;
+}
 
 
 // Iteration 2 | Book Details
@@ -93,9 +94,10 @@ function getBookDetails(book) {
 
 // Iteration 3 | Delete Language
 // Your code here:
-
-
-
+for (let i = 0; i < booksArray.length; i++) {
+  const book = booksArray[i];
+  delete book.details.language;
+}
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
