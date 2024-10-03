@@ -99,11 +99,14 @@ for ( let i = 0; i < booksArray.length; i++) {
 // Your code here:
 
 for ( let i = 0; i < booksArray.length; i++) {
-  const timePerPage = 1;
-  booksArray[i].readingTime = booksArray[i].pages * timePerPage;
+  const words = 500;
+  const wordsPerMinute = 90;
+  const readTimeInMinutes = booksArray[i].pages * words / wordsPerMinute;
+  booksArray[i].readingTime = Math.ceil(readTimeInMinutes);
+  console.log(`${booksArray[i].title} - Reading Time: ${booksArray[i].readingTime} minutes`);
 }
 
-//  booksArray[i].readingTime = 60;
+
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -128,9 +131,14 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dictionary) {
   // Your code here:
-  
+  const arr = [];
+  for ( let i = 0; i < dictionary.length; i++){
+    const bookObjects = Object.keys(dictionary);
+    console.log(bookObjects);
+  }
+  return arr;
 }
 
 
