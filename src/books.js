@@ -161,10 +161,11 @@ function averagePageCount(books) {
     for (let i = 0; i < books.length; i++) {
       totalPages += books[i].pages;
     }
-    
+
     const average = totalPages / books.length;
-  
+
     return average;
+    
   }
 
   
