@@ -44,6 +44,7 @@ const book1 = {
   pages: 128,
   author: "Ernest Hemingway",
   details: {
+    language: "English",
     description: "One of Hemingway's most famous works, it tells the story of Santiago, an aging fisherman struggling with a giant marlin far out in the Gulf Stream.",
   }
 };
@@ -53,6 +54,7 @@ const book2 = {
   pages: 256,
   author: "Leigh Gallagher",
   details: {
+    language: "English",
     description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
   }
 };
@@ -62,6 +64,7 @@ const book3 = {
   pages: 352,
   author: "Tara Westover",
   details: {
+    language: "English",
     description: "Educated is an account of the struggle for self-invention...",
   }
 };
@@ -71,6 +74,7 @@ const book4 = {
   pages: 288,
   author: "Josh Waitzkin",
   details: {
+    language: "English",
     description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
   }
 };
@@ -87,15 +91,21 @@ console.log(getBookDetails(book1));
 
 
 // Iteration 3 | Delete Language
-// Your code here:
+for (let i = 0; i < booksArray.length; i++) {
+  delete booksArray[i].details.language;
+}
 
-
+console.log(booksArray);
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+for (let i = 0; i < booksArray.length; i++) {
+  const pages = booksArray[i].pages;
+  const readingTime = Math.ceil((pages * 500) / 90); 
+  booksArray[i].readingTime = readingTime; 
+}
 
-
+console.log(booksArray);
 
 
 // Bonus: Iteration 5 | Books Dictionary
