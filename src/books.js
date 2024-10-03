@@ -87,9 +87,8 @@ const booksArray = [
 // Iteration 2 | Book Details
 function getBookDetails(book) {
   // Your code here:
-  return `${book[`title`]} - ${book[`author`]} - ${book[`pages`]} pages`;
+  return `${book[`title`]} - ${book[`author`]} - ${book[`pages`]} pages`; // Also with book.title
 }
-
 
 
 // Iteration 3 | Delete Language
@@ -97,12 +96,18 @@ function getBookDetails(book) {
 for (let i = 0; i < booksArray.length; i++) {
   const book = booksArray[i];
   delete book.details.language;
-}
+};
+
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+for (let i = 0; i < booksArray.length; i++) {
+  const book = booksArray[i];
+  const readingTime = Math.ceil((book.pages * 500) / 90); //Should be with ceil
+  book.readingTime = readingTime;
+};
 
-
+console.log(booksArray);
 
 
 // Bonus: Iteration 5 | Books Dictionary
