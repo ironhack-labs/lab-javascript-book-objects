@@ -38,9 +38,44 @@
 
 
 // Your code here:
-const booksArray = [];
 
+const book1 = {
+  title: "The Old Man and the Sea",
+  pages: 128,
+  author: "Ernest Hemingway",
+  details: {
+    description: "One of Hemingway's most famous works, it tells the story of Santiago, an aging fisherman struggling with a giant marlin far out in the Gulf Stream.",
+  }
+};
 
+const book2 = {
+  title: "The Airbnb Story",
+  pages: 256,
+  author: "Leigh Gallagher",
+  details: {
+    description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
+  }
+};
+
+const book3 = {
+  title: "Educated - A Memoir",
+  pages: 352,
+  author: "Tara Westover",
+  details: {
+    description: "Educated is an account of the struggle for self-invention...",
+  }
+};
+
+const book4 = {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: {
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+  }
+};
+
+const booksArray = [book1, book2, book3, book4];
 
 
 // Iteration 2 | Book Details
