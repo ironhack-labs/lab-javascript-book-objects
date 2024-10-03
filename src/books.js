@@ -142,11 +142,36 @@ const dictionary = {
         ["Blink", 287],
     ],
 };
+ 
+  function booksByAuthor(dictionary) {
 
-function booksByAuthor() {
-  // Your code here:
+    const result = [];
   
-}
+   
+    for (let author of Object.keys(dictionary)) {
+      const books = dictionary[author];
+  
+      
+      for (let i = 0; i < books.length; i++) {
+        const book = books[i];
+  
+        
+        result.push({
+          title: book[0], 
+          pages: book[1], 
+          author: author  
+        });
+      }
+    }
+  
+    return result;
+  }
+
+    
+  console.log(booksByAuthor(dictionary));
+  
+  
+
 
 
 
