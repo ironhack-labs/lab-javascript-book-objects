@@ -133,11 +133,26 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
-}
+function booksByAuthor(dictionaryExample) {
+  const arrayOfBooks = [];  // Array que se entregará como rsultado
+  const authors = Object.keys(dictionaryExample); // Con keys accedo a todos los objetos y los almaceno como autores
+  for (let i = 0; i < authors.length; i++) {
+    const author = authors[i];  // Recorro uno a uno los autores
+    const books = dictionaryExample[author];  // Accedo al array de libros que tiene cada autor
+    for (let j = 0; j < books.length; j++) {
+      const book = books[j];
+      const title = book[0];
+      const pages = book[1];
 
+      arrayOfBooks.push({
+          title: title,
+          pages: pages,
+          author: author,
+      });
+    }
+  }
+  return arrayOfBooks;
+}
 
 
 // Bonus: Iteration 6 | Average Page Count
