@@ -7,7 +7,6 @@ pages
 author
 description
 
-*/
 
 // Book 1
 // title: The Old Man and the Sea
@@ -44,7 +43,7 @@ description
 //    language: English
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
-
+*/
 
 // Your code here:
 const booksArray = [ {title: "The Old Man and the Sea", 
@@ -83,16 +82,46 @@ const booksArray = [ {title: "The Old Man and the Sea",
 
 
 
-// Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
+/* Iteration 2 | Book Details
 
-}
+Create a function named getBookDetails() that takes one argument - the book object. The function should return a string in the following format:
+
+"TITLE - AUTHOR - PAGES pages"
+*/
+
+book =  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    details: { /*...*/ }
+  } 
+
+  function getBookDetails(book) {
+    // Your code here:  
+    let {title, author, pages} = book; 
+
+    return `${title} - ${author} - ${pages} pages`;
+
+  }
 
 
+/* Iteration 3 | Delete Language
+  Iterate over the booksArray, and delete the nested object property language from each book object.
+  Once done, console.log the booksArray array to confirm that the property has been deleted from all the book objects.
 
-// Iteration 3 | Delete Language
-// Your code here:
+  Note: You shouldn't change the booksArray manually, but instead, you should iterate over the array and delete the property from each book object.
+
+*/
+
+    for (const book of booksArray){
+
+      delete book.details.language; 
+
+    }
+
+    console.log(booksArray); 
+
+
 
 
 
