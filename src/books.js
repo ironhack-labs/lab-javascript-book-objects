@@ -6,7 +6,7 @@ title
 pages
 author
 description
-
+*/
 
 // Book 1
 // title: The Old Man and the Sea
@@ -43,7 +43,7 @@ description
 //    language: English
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
-*/
+
 
 // Your code here:
 const booksArray = [ {title: "The Old Man and the Sea", 
