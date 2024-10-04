@@ -115,16 +115,14 @@ book =  {
 
     for (let i = 0; i < booksArray.length; i++){
 
-      delete book.details.language; 
+      delete booksArray[i].details.language; 
 
     }
 
     console.log(booksArray); 
 
 
-
-
-
+  
 
 /* Iteration 4 | Estimated Reading Time: 
 
@@ -153,12 +151,8 @@ booksArray.forEach(book => {
 
 */
   for (let i = 0; i < booksArray.length; i++) {
-  
-   const wordsPerPage = 500; //Palabras por página.  
    
-   const readingSpeed = 90; //Palabras por minuto. 
-   
-   const readingTime = (booksArray[i].pages * wordsPerPage) / readingSpeed; //Aplico la fórmula por cada libro del array.
+   const readingTime = (booksArray[i].pages * 500) / 90; //Aplico la fórmula por cada libro del array.
    
    booksArray[i].readingTime = Math.ceil(readingTime); // Con esto eliminamos los decimales. 
 
