@@ -101,41 +101,59 @@ booksArray = booksArray.map(book => {
     readingTime: Math.ceil((book.pages * 500) / 90)
   };
 });
-/*
+
 // Bonus: Iteration 5 | Books Dictionary
 
-/* The `dictionary` is an object containing books grouped by author. 
- The book info is stored in arrays with structure: [title, pages]. 
-*/
-/*
-const dictionary = {
-    "J. K. Rowling": [
-        ["Harry Potter and the Philosopher's Stone", 223],
-        ["Harry Potter and the Chamber of Secrets", 251],
-        ["Harry Potter and the Prisoner of Azkaban", 317],
-        ["Harry Potter and the Goblet of Fire", 636],
-    ],
-    "Neal Stephenson": [
-        ["Cryptonomicon", 928],
-        ["Anathem", 1008],
-        ["Fall; or, Dodge in Hell", 896],
-    ],
-    "Malcolm Gladwell": [
-        ["Outliers", 320],
-        ["Blink", 287],
-    ],
+/*The `dictionary` is an object containing books grouped by author. 
+ The book info is stored in arrays with structure: [title, pages]. */
+
+ const dictionary = {
+  "J. K. Rowling": [
+      ["Harry Potter and the Philosopher's Stone", 223],
+      ["Harry Potter and the Chamber of Secrets", 251],
+      ["Harry Potter and the Prisoner of Azkaban", 317],
+      ["Harry Potter and the Goblet of Fire", 636],
+  ],
+  "Neal Stephenson": [
+      ["Cryptonomicon", 928],
+      ["Anathem", 1008],
+      ["Fall; or, Dodge in Hell", 896],
+  ],
+  "Malcolm Gladwell": [
+      ["Outliers", 320],
+      ["Blink", 287],
+  ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(dictionary) {
+const booksArray = [];
+
+for (const author in dictionary) {
+  const books = dictionary[author];
+
+  for (const book of books) {
+    const bookObject = {
+      title: book[0],
+      pages: book[1],
+      author: author
+    };
+    booksArray.push(bookObject);
+  }
 }
 
-
-
-// Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+return booksArray;
 }
-*/
+
+function averagePageCount(books) {
+if (books.length === 0) return 0;
+
+const totalPages = books.reduce((sum, book) => sum + book.pages, 0);
+return totalPages / books.length;
+}
+
+// Pruebas
+const books = booksByAuthor(dictionary);
+console.log(books); // Imprime el array de objetos de libros
+
+const averagePages = averagePageCount(books);
+console.log(`Average Page Count: ${averagePages}`); // Imprime el promedio de páginas
