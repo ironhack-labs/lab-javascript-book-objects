@@ -125,15 +125,15 @@ const dictionary = {
 };
 
 function booksByAuthor(dictionary) {
-  let booksArray = [];
-  const authors = Object.keys(dictionary);
+  let booksArr = [];
 
-  for (let i = 0; i < authors.length; i++) {
-    let author = authors[i];
+  for (let author in dictionary) {
+    let books = dictionary[author]; // Array de libros por autor
 
-    for (let j = 0; j < dictionary[author].length; j++) {
-      let book = dictionary[author][j];
-      booksArray.push({
+    for (let i = 0; i < books.length; i++) {
+      let book = books[i];
+
+      booksArr.push({
         title: book[0],
         pages: book[1],
         author: author,
@@ -141,8 +141,10 @@ function booksByAuthor(dictionary) {
     }
   }
 
-  return booksArray;
+  return booksArr;
 }
+
+booksByAuthor(dictionary);
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount(booksArray) {
