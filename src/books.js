@@ -113,7 +113,7 @@ book =  {
 
 */
 
-    for (const book of booksArray){
+    for (let i = 0; i < booksArray.length; i++){
 
       delete book.details.language; 
 
