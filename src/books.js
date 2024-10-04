@@ -94,8 +94,9 @@ booksArray.forEach((book) => console.log(getBookDetails(book)));
 // Your code here:
 
 booksArray.forEach((book) => {
-  delete book.language;
+  delete book.details.language;
 });
+
 console.log(booksArray);
 
 // Iteration 4 | Estim
@@ -107,9 +108,8 @@ booksArray.forEach((book) => {
 console.log(booksArray);
 
 booksArray.forEach((book) => {
-  const minutes = Math.round((book.pages * 500) / 90);
+  book.readingTime = Math.ceil((book.pages * 500) / 90);
 });
-console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
