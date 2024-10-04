@@ -81,19 +81,31 @@ const booksArray = [
 ]
 
 // Iteration 2 | Book Details
-function getBookDetails (bookObj) {
-  let newData = ''
-  newData += `${bookObj.title} - ${bookObj.author} - ${bookObj.pages} pages\n`
+function getBookDetails (book) {
+  return `${book.title} - ${book.author} - ${book.pages} pages`
 
   // Your code here:
-  console.log(newData)
 }
-getBookDetails(booksArray)
+booksArray.forEach(function (book) {
+  console.log(getBookDetails(book))
+})
+
 // Iteration 3 | Delete Language
 // Your code here:
+booksArray.forEach(function (book) {
+  delete book.details.language
+  console.log(`${book.title}: Language property deleted`)
+})
 
+console.log(booksArray)
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+booksArray.forEach(function (book) {
+  const readingTime = Math.floor((book.pages * 500) / 90)
+  book.readingTime = readingTime
+})
+
+console.log(booksArray)
 
 // Bonus: Iteration 5 | Books Dictionary
 
