@@ -130,8 +130,16 @@ const dictionary = {
   ]
 }
 
-function booksByAuthor () {
+function booksByAuthor (data) {
   // Your code here:
+  let newBookData = []
+  for (const author in data) {
+    const books = data[author]
+    books.forEach(function (book) {
+      newBookData.push({ title: book[0], pages: book[1], author: author })
+    })
+  }
+  return newBookData
 }
 
 // Bonus: Iteration 6 | Average Page Count
