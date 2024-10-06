@@ -159,7 +159,7 @@ function averagePageCount(booksArray) {
   // Your code here:
   let sum = 0;
 
-  for (let i=0; i<booksArray; i++){
+  for (let i=0; i<booksArray.length; i++){
     sum += booksArray[i].pages
   }
   return sum / booksArray.length;
