@@ -81,7 +81,7 @@ const booksArray = [
 
 
 // Iteration 2 | Book Details
-function getBookDetails(book) {
+function getBookDetails(booksArray) {
   // Your code here:
 for (let i=0; i<booksArray.length; i++){
   
@@ -137,6 +137,7 @@ const dictionary = {
         ["Blink", 287],
     ],
 };
+
 
 function booksByAuthor(dictionary) {
   // Your code here:
