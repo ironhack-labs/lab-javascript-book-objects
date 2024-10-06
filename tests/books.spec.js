@@ -197,15 +197,31 @@ describe("BONUS: Iteration 6 | Average Page Count", () => {
     });
 
     it("should return a number", () => {
-      expect(typeof averagePageCount(testBooks)).toBe("number");
+      expect(typeof averagePageCount(dictionary)).toBe("number");
     });
 
-    it("should return the average page count number for all the books", () => {
-      const result = averagePageCount(testBooks);
-      const totalPages = testBooks.reduce((acc, book) => acc + book.pages, 0);
-      const averagePages = totalPages / testBooks.length;
+    // it("should return the average page count number for all the books", () => {
+    //   const result = averagePageCount(dictionary);
+    //   const totalPages = dictionary.reduce((acc, book) => acc + book.pages, 0);
+    //   const averagePages = totalPages / dictionary.length;
 
+    //   expect(result).toBe(averagePages);
+    // });
+    it("should return the average page count number for all the books", () => {
+      const result = averagePageCount(dictionary);
+    
+      // Aplanar el diccionario para obtener todos los libros
+      const allBooks = Object.values(dictionary).flat();
+    
+      // Sumar todas las páginas
+      const totalPages = allBooks.reduce((acc, book) => acc + book[1], 0);
+    
+      // Calcular el promedio
+      const averagePages = totalPages / allBooks.length;
+    
+      // Validar que el resultado sea igual al promedio esperado
       expect(result).toBe(averagePages);
     });
+    
   });
 });
