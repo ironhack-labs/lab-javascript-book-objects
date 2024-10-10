@@ -46,7 +46,7 @@ console.log(booksArray);
 
 // Iteration 2 | Book Details
 function getBookDetails(book) {
-  return "${book.title} - ${book.author} - ${book.pages} pages";
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
 
@@ -68,9 +68,6 @@ book.readingTime = readingTime;
 });
 
 console.log(booksArray);
-
-
-
 
 // Bonus: Iteration 5 | Books Dictionary
 
