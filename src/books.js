@@ -92,22 +92,19 @@ console.log(getBookDetails(booksArray[3]));
 
 // Iteration 3 | Delete Language
 
-booksArray.forEach(books => {
-  delete books.details.language
-  
+booksArray.forEach((books) => {
+  delete books.details.language;
 });
 console.log(booksArray);
-
-
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
-booksArray.forEach(books => {
+booksArray.forEach((books) => {
   const words = 500;
   const wordsPerMinute = 90;
 
-  const readingTime = Math.ceil(books.pages * words / wordsPerMinute);
+  const readingTime = Math.ceil((books.pages * words) / wordsPerMinute);
 
   books.readingTime = readingTime;
 });
@@ -137,8 +134,28 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
-  // Your code here:
+function booksByAuthor(dictionary) {
+  const book = [];
+  const authors = Object.keys(dictionary);
+
+  for (let i = 0; i < dictionary.length; i++) {
+    const author = authors[i];
+
+    for (let j = 0; j < dictionary.author.length; j++) {
+      const book = dictionary[author][i];
+
+      let bookObj = {
+        title: book[0],
+        pages: book[1],
+        author: author,
+      };
+
+      books.push(bookObj)
+    }
+    
+  }
+
+  return books
 }
 
 // Bonus: Iteration 6 | Average Page Count
