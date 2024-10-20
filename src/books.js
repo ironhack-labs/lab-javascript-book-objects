@@ -50,8 +50,6 @@ function getBookDetails(book) {
 
 //"TITLE - AUTHOR - PAGES pages"
 
-
-
 // Iteration 3 | Delete Language
 // Your code here:
 function removeLanguage(booksArray) {
