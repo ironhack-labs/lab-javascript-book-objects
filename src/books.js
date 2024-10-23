@@ -47,13 +47,13 @@ const booksArray = [
 console.log(booksArray[0]);
 
 // Iteration 2 | Book Details
-function getBookDetails(index) {
+function getBookDetails(book) {
     // Your code here:
     //"TITLE - AUTHOR - PAGES pages"
-    return `${booksArray[index].title} - ${booksArray[index].author} - ${booksArray[index].pages} pages`;
+    return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
-console.log(getBookDetails(1));
+console.log(getBookDetails(booksArray[0]));
 
 // Iteration 3 | Delete Language
 // Your code here:
@@ -67,7 +67,7 @@ console.log(booksArray[0].details);
 // Your code here:
 // (number of pages * 500) / 90
 for (i in booksArray) {
-    booksArray[i].readingTime = (booksArray[i].pages * 500) / 90;
+    booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500) / 90);
 }
 
 console.log(booksArray[0].readingTime);
@@ -102,10 +102,11 @@ function booksByAuthor(object) {
     let array = Object.entries(object);
 
     for (i in array) {
-        for (n in array[i][1]) {
+        let nestedArray = array[i][1];
+        for (j in nestedArray) {
             let newBook = {
-                title: array[i][1][n][0],
-                pages: array[i][1][n][1],
+                title: nestedArray[j][0],
+                pages: nestedArray[j][1],
                 author: array[i][0],
             };
             newArray.push(newBook);
@@ -115,7 +116,7 @@ function booksByAuthor(object) {
 }
 
 let testArray = booksByAuthor(dictionary);
-console.log(testArray[8]);
+console.log(testArray);
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount(array) {
