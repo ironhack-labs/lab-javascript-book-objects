@@ -54,7 +54,10 @@ booksArray.forEach(book => delete book.details.language);
 console.log('🚀 ~ booksArray:', booksArray);
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+booksArray.forEach(
+	book => (book.readingTime = Math.ceil((book.pages * 500) / 90))
+);
+console.log('🚀 ~ booksArray:', booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
