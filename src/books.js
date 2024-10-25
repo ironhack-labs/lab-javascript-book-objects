@@ -86,21 +86,22 @@ function booksByAuthor(dictionary) {
 	let books = [];
 
 	for (let authorName in dictionary) {
-		books.push(
-			...dictionary[authorName].reduce((authorBooks, book) => {
-				authorBooks.push({
-					title: book[0],
-					pages: book[1],
-					author: authorName,
-				});
+		const authorsBooks = dictionary[authorName];
 
-				return authorBooks;
-			}, [])
-		);
+		for (let bookArray of authorsBooks) {
+			const bookObject = {
+				title: bookArray[0],
+				pages: bookArray[1],
+				author: authorName,
+			};
+
+			books.push(bookObject);
+		}
 	}
 
 	return books;
 }
+
 // booksByAuthor(dictionary);
 // console.log(booksByAuthor(dictionary));
 
