@@ -85,17 +85,9 @@ const dictionary = {
 function booksByAuthor(dictionary) {
 	let books = [];
 
-	for (let authorName in dictionary) {
-		const authorsBooks = dictionary[authorName];
-
-		for (let bookArray of authorsBooks) {
-			const bookObject = {
-				title: bookArray[0],
-				pages: bookArray[1],
-				author: authorName,
-			};
-
-			books.push(bookObject);
+	for (let author in dictionary) {
+		for (let [title, pages] of dictionary[author]) {
+			books.push({ title, pages, author });
 		}
 	}
 
