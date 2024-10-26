@@ -94,7 +94,7 @@ const booksArray = [{ book: {
   
 // Iteration 2 | Book Details
 
-function getBookDetails(book) {
+function getBookDetails() {
   // Your code here:
     
   let titleUp = booksArray[0].book.title;
