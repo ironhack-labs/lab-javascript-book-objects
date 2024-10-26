@@ -38,28 +38,98 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [{ book: {
+
+  // Book 1
+  title: "The Old Man and the Sea",
+  pages: 128,
+  author: "Ernest Hemingway",
+  details: {
+    language: "English",
+    description: "One of Hemingway's most famous works, it tells the story of Santiago...",
+  }
+  }
+}
+, 
 
 
+// Book 2
+{ book:{
+  title: "The Airbnb Story",
+  pages: 256,
+  author: "Leight Gallagher",
+  details: {
+    language: "English",
+    description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",}
+    }
+  }
+,
 
+// Book 3
+{ book:
+  {
+  title: "Educated - A Memoir",
+  pages: 352,
+  author: "Tara Westover",
+  details: {
+    language: "English",
+    description: "Educated is an account of the struggle for self-invention..."
+  },
+  }
+},
 
+// Book 4
+{ book:{
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: {
+    language: "English",
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."},
+  }
+}
+
+];
+
+  
 // Iteration 2 | Book Details
-function getBookDetails() {
+
+function getBookDetails(book) {
   // Your code here:
+    
+  let titleUp = booksArray[0].book.title;
+  let authorUp = booksArray[2].book.author;
+  let pagesUp = booksArray[1].book.pages;
+
+  
+  return `${titleUp} - ${authorUp} - ${pagesUp} pages`
 
 }
+
+console.log(getBookDetails());
+
 
 
 
 // Iteration 3 | Delete Language
 // Your code here:
 
+console.log(delete booksArray[1].book.details.language)
+console.log(booksArray[1].book.details)
+
+  
+console.log(booksArray[1])
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+
+booksArray.readingTime;
+
+
+console.log(booksArray)
 
 
 
