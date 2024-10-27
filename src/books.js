@@ -38,28 +38,69 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [{
+  title: "The Old Man and the Sea",
+  pages: 128,
+  author: "Ernest Hemingway",
+  details: {
+  language: "English",
+  description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+   }
+  }, 
+  {
+  title: "The Airbnb Story",
+  pages: 256,
+  author: "Leight Gallagher",
+  details: {
+  language: "English",
+  description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+ }
+  }, 
+  {
+  title: "Educated - A Memoir",
+  pages: 352,
+  author: "Tara Westover",
+  details: {
+  language: "English",
+  description: "Educated is an account of the struggle for self-invention..."
+ }
+  }, 
+  {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: {
+  language: "English",
+  description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+ }
+  }];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
   // Your code here:
 
+  return `${book.title.toString()} - ${book.author.toString()} - ${book.pages} pages`
 }
 
 
 
 // Iteration 3 | Delete Language
 // Your code here:
+booksArray.forEach(book => delete book.details.language)
 
+console.log(booksArray);
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+booksArray.forEach( book => book.readingTime =  Math.ceil((book.pages * 500) / 90));
+
+console.log(booksArray);
 
 
 
@@ -86,15 +127,27 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dict) {
   // Your code here:
-  
+  const arrayOfBooks = [];
+
+  for (authorKey in dict) {  
+    for (let i = 0; i < dict[authorKey].length; i++) {
+      arrayOfBooks.push({author : authorKey, title : dict[authorKey][i][0], pages: dict[authorKey][i][1]});    
+      
+    }
+  }
+
+return arrayOfBooks;
 }
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(arrOfBooks) {
+  // Your code here
+  let sumOfPages = 0;
+  arrOfBooks.forEach(book =>{sumOfPages += book.pages})
+
+  return sumOfPages / arrOfBooks.length;
 }
