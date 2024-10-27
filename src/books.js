@@ -133,7 +133,7 @@ function booksByAuthor(dict) {
 
   for (authorKey in dict) {  
     for (let i = 0; i < dict[authorKey].length; i++) {
-      arrayOfBooks.push({author : Object.keys(dict)[i], title : dict[authorKey][i][0], pages: dict[authorKey][i][1]});    
+      arrayOfBooks.push({author : authorKey, title : dict[authorKey][i][0], pages: dict[authorKey][i][1]});    
       
     }
   }
