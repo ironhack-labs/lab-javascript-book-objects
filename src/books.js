@@ -131,10 +131,6 @@ const dictionary = {
   ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-}
-
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount() {
   // Your code here:
