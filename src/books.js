@@ -88,20 +88,22 @@ function getBookDetails(bookObj) {
   return bookStr;
 }
 
-
 // Iteration 3 | Delete Language
 // Your code here:
 for(let i = 0; i < booksArray.length; i++) {
   delete booksArray[i].details.languages;
 }
-
-console.log(booksArray[0].details)
+// console.log(booksArray[0].details)
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-
+for(let i = 0; i < booksArray.length; i++) {
+  let timeToRead = (booksArray[i].pages * 500) / 90;
+  booksArray[i].readingTime = timeToRead;
+}
+// console.log(booksArray)
 
 
 
@@ -111,11 +113,11 @@ console.log(booksArray[0].details)
  The book info is stored in arrays with structure: [title, pages]. 
 */
 const dictionary = {
-    "J. K. Rowling": [
-        ["Harry Potter and the Philosopher's Stone", 223],
-        ["Harry Potter and the Chamber of Secrets", 251],
-        ["Harry Potter and the Prisoner of Azkaban", 317],
-        ["Harry Potter and the Goblet of Fire", 636],
+    "J. K. Rowling": [ // dictionary["J. K. Rowling"] => => =>  v
+        ["Harry Potter and the Philosopher's Stone", 223], // arr 0 => 0 , 1
+        ["Harry Potter and the Chamber of Secrets", 251], // arr 1 => 0 , 1
+        ["Harry Potter and the Prisoner of Azkaban", 317], // arr 2 => 0 , 1
+        ["Harry Potter and the Goblet of Fire", 636], // arr 3 => 0 , 1
     ],
     "Neal Stephenson": [
         ["Cryptonomicon", 928],
@@ -128,12 +130,28 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dictionary) {
   // Your code here:
+//   let newArr = [];
+
+//   for(let i = 0; i < dictionary.length; i++) {    
+//     newArr.push({});
+//     newArr[i].title = dictionary[i][0];
+//     newArr[i].pages = dictionary[i][1];
+//     newArr[i].author = dictionary;
+//   }
   
+// return newArr;
 }
 
+// console.log(booksByAuthor(dictionary))
 
+// let testArr = [];
+// testArr.push({});
+// testArr[0].author = "Ciclaninho";
+// console.log(testArr)
+
+// console.log(dictionary["J. K. Rowling"][0])
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount() {
