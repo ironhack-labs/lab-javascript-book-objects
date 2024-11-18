@@ -132,26 +132,31 @@ const dictionary = {
 
 function booksByAuthor(dictionary) {
   // Your code here:
-//   let newArr = [];
+  let arrayOfAllBooks = [];
 
-//   for(let i = 0; i < dictionary.length; i++) {    
-//     newArr.push({});
-//     newArr[i].title = dictionary[i][0];
-//     newArr[i].pages = dictionary[i][1];
-//     newArr[i].author = dictionary;
-//   }
-  
-// return newArr;
+  for(let author in dictionary) {
+    console.log(author);
+    let librosDelAutor = dictionary[author]
+    console.log(librosDelAutor);
+
+    for(let i = 0; i < librosDelAutor.length; i++) {
+      let cadaLibroArr = librosDelAutor[i];
+
+      let cadaLibroObj = {
+        title: cadaLibroArr[0],
+        pages: cadaLibroArr[1],
+        author: author
+      }
+
+      arrayOfAllBooks.push(cadaLibroObj)
+    }
+  }
+
+  return arrayOfAllBooks;
 }
 
-// console.log(booksByAuthor(dictionary))
+console.log(booksByAuthor(dictionary));
 
-// let testArr = [];
-// testArr.push({});
-// testArr[0].author = "Ciclaninho";
-// console.log(testArr)
-
-// console.log(dictionary["J. K. Rowling"][0])
 
 // Bonus: Iteration 6 | Average Page Count
 function averagePageCount() {
