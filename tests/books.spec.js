@@ -130,7 +130,7 @@ describe("Iteration 4 | Estimated Reading Time", () => {
         expect(typeof book.readingTime).toBe("number");
     });
 
-    it("should have the property 'readingTime' with the number of minutes it takes to read the book", () => {
+    it("should have the property 'readingTime' with the number of minutes it takes to read the book (rounded up to the next whole number)", () => {
       for (let book of booksArray)
         expect(book.readingTime).toBe(Math.ceil((book.pages * 500) / 90));
     });

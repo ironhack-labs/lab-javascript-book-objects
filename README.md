@@ -188,9 +188,10 @@ Assuming a page consists of *500 words* and that the average reader reads *90 wo
 
 > reading time in minutes = (`number of pages` * `500`) / `90`
 
-<br>
+The reading time must be rounded UP to the next whole number, even if the result is a small decimal. For example:
 
-
+- If the result is 711.1, round it up to 712.
+- If the result is 30.03, round it up to 31.
 
 Once done, `console.log` the `booksArray` to confirm that the property has been added to each book object.
 
