@@ -78,7 +78,7 @@ In the `index.js` file, **create an array named `booksArray`** containing **4 ob
 - `title`
 - `pages`
 - `author`
-- `description`
+- `details`
 
 <br>
 
