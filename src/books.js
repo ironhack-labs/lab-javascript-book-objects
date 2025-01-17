@@ -36,32 +36,83 @@
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
 
-
 // Your code here:
-const booksArray = [];
-
-
-
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    details: {
+      language: "English",
+      description:
+        "One of Hemingway's most famous works, it tells the story of Santiago...",
+    },
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leight Gallagher",
+    details: {
+      language: "English",
+      description:
+        "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
+    },
+  },
+  {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details: {
+      language: "English",
+      description:
+        "Educated is an account of the struggle for self-invention...",
+    },
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    details: {
+      language: "English",
+      description:
+        "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+    },
+  },
+];
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(booksArray) {
   // Your code here:
 
+  // console.log(Object.values(booksArray));
+  let details =
+    booksArray.title +
+    " - " +
+    booksArray.author +
+    " - " +
+    booksArray.pages +
+    " pages";
+
+  return details;
 }
-
-
 
 // Iteration 3 | Delete Language
 // Your code here:
 
-
-
+for (let i in booksArray) {
+  delete booksArray[i].details.language;
+}
+// console.log(booksArray);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
-
-
+let readingTime = 0;
+for (let i in booksArray) {
+  let numPages = booksArray[i].pages;
+  timeTaken = Math.ceil((numPages * 500) / 90);
+  booksArray[i].readingTime = timeTaken;
+}
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -69,32 +120,51 @@ function getBookDetails() {
  The book info is stored in arrays with structure: [title, pages]. 
 */
 const dictionary = {
-    "J. K. Rowling": [
-        ["Harry Potter and the Philosopher's Stone", 223],
-        ["Harry Potter and the Chamber of Secrets", 251],
-        ["Harry Potter and the Prisoner of Azkaban", 317],
-        ["Harry Potter and the Goblet of Fire", 636],
-    ],
-    "Neal Stephenson": [
-        ["Cryptonomicon", 928],
-        ["Anathem", 1008],
-        ["Fall; or, Dodge in Hell", 896],
-    ],
-    "Malcolm Gladwell": [
-        ["Outliers", 320],
-        ["Blink", 287],
-    ],
+  "J. K. Rowling": [
+    ["Harry Potter and the Philosopher's Stone", 223],
+    ["Harry Potter and the Chamber of Secrets", 251],
+    ["Harry Potter and the Prisoner of Azkaban", 317],
+    ["Harry Potter and the Goblet of Fire", 636],
+  ],
+  "Neal Stephenson": [
+    ["Cryptonomicon", 928],
+    ["Anathem", 1008],
+    ["Fall; or, Dodge in Hell", 896],
+  ],
+  "Malcolm Gladwell": [
+    ["Outliers", 320],
+    ["Blink", 287],
+  ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(obj) {
   // Your code here:
-  
+  let authorArr = [];
+  for (let key in obj) {
+    let author = key;
+    let value = obj[author];
+    for (let entry of value) {
+      let titleName = entry[0];
+      let pageNum = entry[1];
+      authorArr.push({
+        title: titleName,
+        pages: pageNum,
+        author: author,
+      });
+    }
+  }
+
+  return authorArr;
 }
 
-
-
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(aveArr) {
   // Your code here:
-  
+  let numberOfPages = 0;
+  let numberOfBooks = aveArr.length;
+  for (let objVal of aveArr) {
+    console.log();
+    numberOfPages += objVal.pages / numberOfBooks;
+  }
+  return numberOfPages;
 }
