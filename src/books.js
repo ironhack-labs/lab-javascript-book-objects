@@ -107,12 +107,16 @@ booksArray.forEach(book => {
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
-for (let row = 0; row < booksArray.length; row++) {
-  console.log(booksArray[row].pages)
-  booksArray[row].readingTime = ((booksArray[row].pages * 500) / 90);
+// for (let row = 0; row < booksArray.length; row++) {
+//   console.log(booksArray[row].pages)
+//   booksArray[row].readingTime = ((booksArray[row].pages * 500) / 90);
 
-}
-console.log(booksArray)
+// }
+// console.log(booksArray)
+booksArray.forEach(libro => {
+  libro.readingTime = Math.ceil((libro.pages * 500) / 90);
+});
+console.log(booksArray);
 
 
 // Bonus: Iteration 5 | Books Dictionary
