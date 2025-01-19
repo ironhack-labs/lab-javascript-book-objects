@@ -48,8 +48,6 @@ function getBookDetails(booksArray) {
     return (`${booksArray.title} - ${booksArray.author} - ${booksArray.pages} pages`);
 }
 
-console.log(getBookDetails(booksArray[0]));
-
 // Iteration 3 | Delete Language
 // Your code here:
 function deleteLanguage(booksArray) {
