@@ -61,7 +61,7 @@ function getBookDetails(arr) {
 // Iteration 3 | Delete Language
 // Your code here:
 
-booksArray.forEach (function(aux, index){
+booksArray.forEach(function (aux, index) {
   delete booksArray[index].details.lenguage;
 })
 
@@ -69,7 +69,7 @@ booksArray.forEach (function(aux, index){
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
-booksArray.forEach (function(aux, index){
+booksArray.forEach(function (aux, index) {
   // let numReadingTime = 0;
 
   // numReadingTime = (booksArray[index].pages * 500) / 90;
