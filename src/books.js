@@ -104,7 +104,7 @@ console.log(booksArray)
 // Your code here:
 
 booksArray.forEach(book => {
-  const readingTime = Math.round((book.pages * 500) / 90 )
+  const readingTime = Math.ceil((book.pages * 500) / 90 )
   book['readingTime'] = readingTime
 }
 );
@@ -136,7 +136,11 @@ const dictionary = {
 
 function booksByAuthor() {
   // Your code here:
-
+let bookcollection:
+for (const author in authorBooks) {
+  bookcollection.push(author)
+  const books
+}
 }
 
 
