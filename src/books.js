@@ -39,7 +39,6 @@
 
 const booksArray = [
   {
-    book: 1,
     title: "The Old Man and the Sea",
     pages: 128,
     author: "Ernest Hemingway",
@@ -49,7 +48,6 @@ const booksArray = [
     }
   },
   {
-    book: 2,
     title: "The Airbnb Story",
     pages: 256,
     author: "Leigh Gallagher",
@@ -59,7 +57,6 @@ const booksArray = [
     }
   },
   {
-    book: 3,
     title: "Educated - A Memoir",
     pages: 352,
     author: "Tara Westover",
@@ -69,7 +66,6 @@ const booksArray = [
     }
   },
   {
-    book: 4,
     title: "The Art of Learning",
     pages: 288,
     author: "Josh Waitzkin",
@@ -86,7 +82,7 @@ const booksArray = [
 
 // Iteration 2 | Book Details
 
-const book4= {
+const book= {
   title: "The Art of Learning",
   pages: 288,
   author: "Josh Waitzkin",
@@ -96,12 +92,12 @@ const book4= {
   }
 };
 
-function getBookDetails(book4) {
-let bookDetails = `${book4.title} - ${book4.author} - ${book4.pages} pages`;
+function getBookDetails(book) {
+let bookDetails = `${book.title} - ${book.author} - ${book.pages} pages`;
 return bookDetails;
 }
 
-console.log(getBookDetails(book4))
+console.log(getBookDetails(book))
 
 
 
