@@ -96,36 +96,27 @@ let myBook = {
   }
  }
 
-function getBookDetails(myBook) {
-  // Your code here:
-    return `${myBook.title} - ${myBook.author} - ${myBook.pages} pages`
-}
-
+ function getBookDetails(myBook){
+  return `${myBook.title} - ${myBook.author} - ${myBook.pages} pages`
+ }
 
 
 // Iteration 3 | Delete Language
-// Your code here:
 
-  for (i=0; i<booksArray.length; i++){
-    delete booksArray[i].details.language
-  }
-  
-  console.log(booksArray[2])
+booksArray.forEach(e => {
+  return delete e.details.language 
+});
 
+//console.log(booksArray)
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
 
-for (i=0; i<booksArray.length; i++){
-  //let readingTime = (booksArray[i].pages * 500)/90
+booksArray.forEach(e => {
+  return e.readingTime = Math.ceil((e.pages * 500)/90) 
+})
 
-  booksArray[i].readingTime = Math.ceil(booksArray[i].pages * 500/90);
-}
-
-console.log(booksArray[2])
-
-
+//console.log(booksArray)
 
 
 
@@ -152,15 +143,29 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(dictionary) {
+  let booksByAuthorArr = []
+  let authorsArr = Object.keys(dictionary)
+  for(let i=0; i<dictionary.length; i++){
+    booksByAuthorArr.push({})
+    
+  }
+  console.log(authorsArr) 
+  return booksByAuthorArr
+ 
 }
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(booksArray) {
+    let totalPages = 0
+  booksArray.forEach(e => {
+    return totalPages += e.pages
+  });
+  
+    let averagePagesCountNum = Math.ceil(totalPages/booksArray.length)
+    return averagePagesCountNum
   // Your code here:
   
 }
