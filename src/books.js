@@ -64,12 +64,18 @@ booksArray.forEach(book => delete book.details.language);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-for (let i = 0; i < booksArray.length; i++) {
+
+//Option with for:
+/* for (let i = 0; i < booksArray.length; i++) {
   booksArray[i].readingTime = Math.ceil((booksArray[i].pages * 500)/90);
-}
+} */
 
-console.log(booksArray);
+//Option with forEach:
+booksArray.forEach(book => {
+  book.readingTime = Math.ceil((book.pages * 500)/90);
+});
 
+//console.log(booksArray);
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -94,15 +100,46 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+//console.log(Object.keys(dictionary));
+ 
+function booksByAuthor(dictionaryObj) {
+  let bookObjectsArray = [];
+  for (let i = 0; i < Object.keys(dictionaryObj).length; i++) {
+    for (let j = 0; j < dictionaryObj[Object.keys(dictionaryObj)[i]].length; j++) {
+      let newBookObject = {
+        title: dictionaryObj[Object.keys(dictionaryObj)[i]][j][0],
+        pages: dictionaryObj[Object.keys(dictionaryObj)[i]][j][1],
+        author: Object.keys(dictionaryObj)[i]
+      } 
+      bookObjectsArray.push(newBookObject);
+    }
+  }
+  return bookObjectsArray;
 }
 
+//console.log(booksByAuthor(dictionary));
 
+//Another way to do this iteration. Save in variables authors and books, use .map and spread operator instead of .push 
+/* function booksByAuthor(dictionaryObj) {
+  let bookObjectsArray = [];
+  for (let i = 0; i < Object.keys(dictionaryObj).length; i++) {
+    let author = Object.keys(dictionaryObj)[i];
+    let books = dictionaryObj[author].map(book => ({
+      title: book[0],
+      pages: book[1],
+      author: author
+    }));
+    bookObjectsArray = [...bookObjectsArray, ...books];
+  }
+  return bookObjectsArray;
+} */
+
+//console.log(booksByAuthor(dictionary));
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(booksArray) {
+  const avgPages = booksArray.reduce((acc, currentBook) => acc + currentBook.pages, 0) / booksArray.length;
+  return avgPages;
 }
+
+
