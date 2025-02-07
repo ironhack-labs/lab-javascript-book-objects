@@ -81,9 +81,9 @@ const booksArray = [
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(libro) {
   // Your code here:
-
+  return `${libro.title} - ${libro.author} - ${libro.pages} pages`;
 }
 
 
@@ -91,13 +91,23 @@ function getBookDetails() {
 // Iteration 3 | Delete Language
 // Your code here:
 
-
+for (let i=0;i<booksArray.length;i++) {
+  delete booksArray[i].details.language;
+  //console.log(booksArray[i]);
+}
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+for (let i=0; i<booksArray.length; i++) {
+  let calcularTiempo;
 
+  calcularTiempo = Math.ceil((booksArray[i].pages * 500) / 90);
+  //console.log(calcularTiempo);
+  booksArray[i].readingTime = calcularTiempo;
+  //console.log(booksArray[i]);
+}
 
 
 // Bonus: Iteration 5 | Books Dictionary
@@ -123,15 +133,51 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(libroDiccionario) {
   // Your code here:
-  
-}
+  let resultado = [];
+  let libro = {};
+    for (propiedades in libroDiccionario) {
+        //console.log(libroDiccionario[propiedades][0][0]);
+        
+        libro.author = propiedades;
+        libro.title = libroDiccionario[propiedades][0][0];
+        libro.pages = libroDiccionario[propiedades][0][1];
+        //console.log(libro.author);
+        resultado.push(libro);
+    }
+
+    //console.log(libro);
+
+    console.log(resultado);
+
+    return resultado;
+  }
+
+
+booksByAuthor(dictionary);
+//console.log(dictionary);
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(listaLibros) {
   // Your code here:
   
+  let totalPaginas = 0;
+  let resultado = 0;
+
+  // Calculamos el total de las páginas
+  for(let i=0; i<listaLibros.length; i++) {
+    totalPaginas += listaLibros[i].pages;
+  }
+
+  // Dividimos el total de las páginas por la cantidad de libros del array
+  resultado = totalPaginas / listaLibros.length;
+
+  return resultado;
+
 }
+
+
+averagePageCount(booksArray);
