@@ -100,7 +100,7 @@ for (let i = 0; i < booksArray.length; i++) {
     delete booksArray[i].details.language;
 }
 
-console.log(booksArray);
+console.log(booksArray[i]);
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
