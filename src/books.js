@@ -136,15 +136,25 @@ const dictionary = {
 function booksByAuthor(libroDiccionario) {
   // Your code here:
   let resultado = [];
-  let libro = {};
+  //let libro = {};
     for (propiedades in libroDiccionario) {
+      libroDiccionario[propiedades].forEach(libro => {
+        resultado.push({
+          title: libro[0],
+          pages: libro[1],
+          author: propiedades
+        });
+      });
+
+
+
         //console.log(libroDiccionario[propiedades][0][0]);
-        
+        /*
         libro.author = propiedades;
         libro.title = libroDiccionario[propiedades][0][0];
         libro.pages = libroDiccionario[propiedades][0][1];
         //console.log(libro.author);
-        resultado.push(libro);
+        resultado.push(libro);*/
     }
 
     //console.log(libro);
