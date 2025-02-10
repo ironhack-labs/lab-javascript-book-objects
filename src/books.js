@@ -38,6 +38,7 @@
 
 
 // Your code here:
+
 const booksArray = [
 
   {
@@ -101,11 +102,8 @@ for (let i = 0; i < booksArray.length; i++) {
 
 console.log(booksArray);
 
-
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-
-
 
 
 // Bonus: Iteration 5 | Books Dictionary
