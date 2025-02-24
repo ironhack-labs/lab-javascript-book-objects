@@ -137,75 +137,75 @@ describe("Iteration 4 | Estimated Reading Time", () => {
   });
 });
 
-// describe("BONUS: Iteration 5 | Books Dictionary", () => {
-//   describe("Function 'booksByAuthor'", () => {
-//     it("should be declared", () => {
-//       expect(booksByAuthor).toBeDefined();
-//       expect(typeof booksByAuthor).toBe("function");
-//     });
+describe("BONUS: Iteration 5 | Books Dictionary", () => {
+  describe("Function 'booksByAuthor'", () => {
+    it("should be declared", () => {
+      expect(booksByAuthor).toBeDefined();
+      expect(typeof booksByAuthor).toBe("function");
+    });
 
-//     it("should receive one argument - a 'dictionary' object", () => {
-//       expect(booksByAuthor.length).toEqual(1);
-//     });
+    it("should receive one argument - a 'dictionary' object", () => {
+      expect(booksByAuthor.length).toEqual(1);
+    });
 
-//     it("should return an array", () => {
-//       expect(Array.isArray(booksByAuthor(testDictionary))).toBe(true);
-//     });
+    it("should return an array", () => {
+      expect(Array.isArray(booksByAuthor(testDictionary))).toBe(true);
+    });
 
-//     it("should return array of book objects", () => {
-//       const booksResult = booksByAuthor(testDictionary);
-//       expect(booksResult.length).toEqual(4);
+    it("should return array of book objects", () => {
+      const booksResult = booksByAuthor(testDictionary);
+      expect(booksResult.length).toEqual(4);
 
-//       for (book of booksResult) {
-//         expect(typeof book).toBe("object");
-//         expect(Array.isArray(book)).toBe(
-//           false,
-//           "-> The returned array should contain objects, not arrays"
-//         );
+      for (book of booksResult) {
+        expect(typeof book).toBe("object");
+        expect(Array.isArray(book)).toBe(
+          false,
+          "-> The returned array should contain objects, not arrays"
+        );
 
-//         expect(book.title).toBeDefined();
-//         expect(typeof book.title).toBe(
-//           "string",
-//           '-> The returned objects should have a string property "title"'
-//         );
+        expect(book.title).toBeDefined();
+        expect(typeof book.title).toBe(
+          "string",
+          '-> The returned objects should have a string property "title"'
+        );
 
-//         expect(book.pages).toBeDefined();
-//         expect(typeof book.pages).toBe(
-//           "number",
-//           '-> The returned objects should have a string property "pages"'
-//         );
+        expect(book.pages).toBeDefined();
+        expect(typeof book.pages).toBe(
+          "number",
+          '-> The returned objects should have a string property "pages"'
+        );
 
-//         expect(book.author).toBeDefined();
-//         expect(typeof book.author).toBe(
-//           "string",
-//           '-> The returned objects should have a string property "author"'
-//         );
-//       }
-//     });
-//   });
-// });
+        expect(book.author).toBeDefined();
+        expect(typeof book.author).toBe(
+          "string",
+          '-> The returned objects should have a string property "author"'
+        );
+      }
+    });
+  });
+});
 
-// describe("BONUS: Iteration 6 | Average Page Count", () => {
-//   describe("Function 'averagePageCount'", () => {
-//     it("should be declared", () => {
-//       expect(averagePageCount).toBeDefined();
-//       expect(typeof averagePageCount).toBe("function");
-//     });
+describe("BONUS: Iteration 6 | Average Page Count", () => {
+  describe("Function 'averagePageCount'", () => {
+    it("should be declared", () => {
+      expect(averagePageCount).toBeDefined();
+      expect(typeof averagePageCount).toBe("function");
+    });
 
-//     it("should receive one argument - a 'books' array", () => {
-//       expect(averagePageCount.length).toEqual(1);
-//     });
+    it("should receive one argument - a 'books' array", () => {
+      expect(averagePageCount.length).toEqual(1);
+    });
 
-//     it("should return a number", () => {
-//       expect(typeof averagePageCount(testBooks)).toBe("number");
-//     });
+    it("should return a number", () => {
+      expect(typeof averagePageCount(testBooks)).toBe("number");
+    });
 
-//     it("should return the average page count number for all the books", () => {
-//       const result = averagePageCount(testBooks);
-//       const totalPages = testBooks.reduce((acc, book) => acc + book.pages, 0);
-//       const averagePages = totalPages / testBooks.length;
+    it("should return the average page count number for all the books", () => {
+      const result = averagePageCount(testBooks);
+      const totalPages = testBooks.reduce((acc, book) => acc + book.pages, 0);
+      const averagePages = totalPages / testBooks.length;
 
-//       expect(result).toBe(averagePages);
-//     });
-//   });
-// });
+      expect(result).toBe(averagePages);
+    });
+  });
+});

@@ -85,13 +85,57 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dict) {
+  const newBooksArray = [];
+  for (let author in dict) {
+    // console.log("dictionary", dict);
+    // console.log("author", author);
+    // console.log("books of the author", dict[author]);
+    dict[author].forEach((row) => {
+      const newBookObject = {};
+      newBookObject.author = author;
+
+      const bookName = row[0];
+      const bookPages = row[1];
+
+      newBookObject.title = bookName;
+      newBookObject.pages = bookPages;
+      newBooksArray.push(newBookObject);
+    });
+  }
+  return newBooksArray;
+}
+// another way
+function booksByAuthor(dictionary){
   // Your code here:
-  
+  let result = []
+
+  for (author in dictionary) {
+    const authorBooks = dictionary[author];
+
+    authorBooks.forEach((item) => {
+      const title = item[0];
+      const pages = item[1];
+
+      const newBook = {
+        title: title,
+        pages: pages,
+        author: author
+      };
+
+      result.push(newBook);
+    })
+  };
+
+  return result;
 }
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(aBookArray) {
+  let totalPages = 0;
+  aBookArray.forEach(oneBook => {
+     totalPages += oneBook.pages;
+  })
+  const averagePageCount = totalPages / aBookArray.length;
+  return averagePageCount;
 }
