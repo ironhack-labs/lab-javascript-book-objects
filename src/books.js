@@ -38,27 +38,69 @@
 
 
 // Your code here:
-const booksArray = [];
+
+function createBook(title, pages, author, language, description){
+  return {
+    title: title,
+    pages: pages,
+    author: author,
+    details: {
+      language: language,
+      description: description,
+    }
+  }
+}
+
+const booksArray = [
+  createBook(
+    'The Old Man and the Sea',
+    128,
+    'Ernest Hemingway',
+    'English',
+    'One of Hemingway\'s most famous works, it tells the story of Santiago...'
+  ),
+  createBook(
+    'The Airbnb Story',
+    256,
+    'Leight Gallagher',
+    'English',
+    'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...'
+  ),
+  createBook(
+    'Educated - A Memoir',
+    352,
+    'Tara Westover',
+    'English',
+    'Educated is an account of the struggle for self-invention...'
+  ),
+  createBook(
+    'The Art of Learning',
+    288,
+    'Josh Waitzkin',
+    'English',
+    'The Art of Learning takes readers through Waitzkin\'s unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.'
+  )
+];
+
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
-
+function getBookDetails(book) {
+  return `${book.title} - ${book.author} - ${book.pages} pages`
 }
 
 
 
 // Iteration 3 | Delete Language
-// Your code here:
+booksArray.forEach((book) => delete book.details.language)
 
 
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+booksArray.forEach((book => book.readingTime = Math.ceil((book.pages * 500) / 90)))
 
 
 
@@ -86,15 +128,35 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthorV1(dictionary) {
+  const listByAuthor = []
+  for (const [author, books] of Object.entries(dictionary)){
+    books.forEach((book) => book.push(author))
+    books.forEach((book) => listByAuthor.push({
+      title: book[0],
+      pages: book[1],
+      author: book[2]
+    }))
+  }
+  return listByAuthor
+}
+
+function booksByAuthor(dictionary) {
+  return Object.entries(dictionary).flatMap(([author, books]) =>
+    books.map(([title, pages]) => ({
+      title,
+      pages,
+      author
+    }))
+  );
 }
 
 
-
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
+function averagePageCount(books) {
+  const totalPages = books.reduce((pages, book) => {
+    return pages + book.pages;
+  }, 0);
   
+  return totalPages / books.length;
 }
