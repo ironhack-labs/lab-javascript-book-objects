@@ -36,30 +36,47 @@
 //    description: The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.
 // }
 
+const createBook = (title, pages, author, language, description) => {
+  return {
+    title: title,
+    pages: pages,
+    author: author,
+    details : {
+      language: language,
+      description: description,
+    },
+  } 
+}
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  createBook('The Old Man and the Sea', 128, 'Ernest Hemingway', 'English', 'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...'),
+  createBook('The Airbnb Story', 256, 'Leight Gallagher', 'English', 'This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...'),
+  createBook('Educated - A Memoir', 352, 'Tara Westover', 'English', 'Educated is an account of the struggle for self-invention...'),
+  createBook('The Art of Learning', 288, 'Josh Waitzkin', 'English', 'The Art of Learning takes readers through Waitzkin\'s unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.')
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
   // Your code here:
-
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
 
 
 // Iteration 3 | Delete Language
 // Your code here:
+booksArray.forEach((book) => delete book.details.language);
 
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
-
+booksArray.forEach((book) => book.readingTime = Math.ceil(book.pages * 500 / 90));
 
 
 
@@ -86,15 +103,15 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(booksDictionnary) {
+  const result = [];
+  for(key in booksDictionnary){
+    booksDictionnary[key].forEach((book) => result.push(createBook(book[0], book[1], key, null, null)))
+  }
+  return result;
 }
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
-}
+const averagePageCount = (bookArray) => bookArray.reduce((acc, curr) => acc + curr.pages, 0) / bookArray.length;
