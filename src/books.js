@@ -38,28 +38,89 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    
+    title: "The Old Man and the SafeArray",
+    pages: 128,
+    readingTime: (256 * 500) / 90,
+    author: "Ernest Hemingway",
+    details: {
+      language: "English",
+    description: "One of Hemingway's most famous works, it tells the story of Santiago...",
+    
+  }
+  },
+  {
+   
+    title: "The Airbnb Story",
+    pages: 256,
+    readingTime: (256 * 500) / 90,
+    author: "Leight Gallagher",
+    details: {
+      language: "English",
+    description: " This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
+    }
+    
+  },
+  {
+    
+    title: "Educated - A Memoir",
+    pages: 352, 
+    readingTime: (256 * 500) / 90, 
+    author: "Tara Westover",
+    details: {
+      language: "English",
+    description: "Educated is an account of the struggle for self-invention...",
+    }
+  },
+  {
+     
+    title: "The Art of Learning",
+    pages: 288,
+    readingTime: (256 * 500) / 90,
+    author: "Josh waitzkin",
+    details: {
+      language: "English",
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+    }
+  },
+  
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
   // Your code here:
 
+for (let i = 0; i < book.length; i++) {
+  const book = book[i];
+  const information = `${book.title} by ${book.author} (${book.pages} pages, ${book.details.genre}, ${book.details.publicationYear})`;
+}
+
+return information; 
 }
 
 
+console.log();
 
 // Iteration 3 | Delete Language
 // Your code here:
-
+for (let i = 0; i < booksArray.length; i++) {
+  delete booksArray[i].details.language;
+}
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
+console.log(booksArray.readingTime[0][2]);
+console.log(booksArray.readingTime[1][2]);
+console.log(booksArray.readingTime[2][2]);
+console.log(booksArray.readingTime[3][2]);
 
 
 
