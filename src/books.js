@@ -1,34 +1,5 @@
 // Iteration 1 | Books Array
 
-// Book 1
-// title: The Old Man and the Sea
-// pages: 128
-// author: Ernest Hemingway
-// details: {
-//    language: English
-//    description: One of Hemingway's most famous works, it tells the story of Santiago...
-// }
-
-// Book 2
-// title: The Airbnb Story
-// pages: 256
-// author: Leight Gallagher
-// details: {
-//    language: English
-//    description: This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...
-// }
-
-// Book 3
-// title: Educated - A Memoir
-// pages: 352
-// author: Tara Westover
-// details: {
-//    language: English
-//    description: Educated is an account of the struggle for self-invention...
-// }
-
-// Book 4
-// title: The Art of Learning
 // pages: 288
 // author: Josh Waitzkin
 // details: {
@@ -38,27 +9,78 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    description: "One of Hemingway's most famous works, it tells the story of Santiago, an aging fisherman who struggles with a giant marlin far out in the Gulf Stream."
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leigh Gallagher",
+    description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb, one of the most extraordinary startups of our time."
+  },
+  {
+    title: "Educated: A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    description: "Educated is an account of the struggle for self-invention. It is a tale of fierce family loyalty and of the grief that comes with severing the closest of ties."
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence in the competitive worlds of chess and martial arts."
+  }
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
-
+function getBookDetails(book) { return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
+
+const exampleBook = {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence..."
+};
+
+console.log(getBookDetails(exampleBook)); 
+// Expected output: "The Art of Learning - Josh Waitzkin - 288 pages"
+  
+
+
 
 
 
 // Iteration 3 | Delete Language
-// Your code here:
+booksArray. forEach(book=> {
+  delete book.language;
+})
+
+console.log(booksArray);
 
 
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+// reading time in minutes=(number of pages * 500)/90
+booksArray.forEach(book=>{
+const wordsPerPage =500;
+const readingSpeed =90;
+
+book.readingTime =
+Math.ceil (( book.pages * wordsPerPage)/ readingSpeed)
+})
+
+console.log(booksArray);
+   
+
 
 
 
@@ -86,15 +108,50 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(dictionary) { let result = [];
+
+  // Loop through each author in the dictionary
+  for (let author in dictionary) {
+    // For each book array under the author
+    dictionary[author].forEach(book => {
+      result.push({
+        title: book[0],
+        pages: book[1],
+        author: author
+      });
+    });
+  }
+
+  return result;
 }
+
+
+  console.log(bookByAuthors(dictionaryExample));
+  
+
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(books) {
+  if (books.length === 0) return 0; // To avoid division by zero
+
+  // Calculate the sum of pages
+  const totalPages = books.reduce((sum, book) => sum + book.pages, 0);
+
+  // Calculate the average
+  const average = totalPages / books.length;
+
+  return average;
 }
+
+// Example usage with an array of book objects
+const book = [
+  { title: "Book One", pages: 200 },
+  { title: "Book Two", pages: 300 },
+  { title: "Book Three", pages: 250 }
+];
+
+console.log(averagePageCount(booksArray))
+  
+
