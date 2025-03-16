@@ -38,22 +38,31 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  { title: "", pages: "", author: "", details: {
+    language: "", description: ""
+  }}
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
   // Your code here:
-
+return (`${booksArray.title} - ${booksArray.author} - ${booksArray.pages} pages`)
 }
 
 
 
 // Iteration 3 | Delete Language
 // Your code here:
-
+booksArray.forEach((language) => {
+  if (booksArray.details.includes(language)) {
+    delete booksArray.details.language
+  }
+});
+console.log(booksArray);
 
 
 
