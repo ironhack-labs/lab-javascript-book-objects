@@ -38,30 +38,68 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    details:{
+      language: "english",
+      description: "One of Hemingway's most famous works, it tells the story of Santiago..."}
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leight Gallagher",
+    details:{
+      language: "english",
+      description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."}
+  },
+  {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details:{
+      language: "english",
+      description: "Educated is an account of the struggle for self-invention..."}
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Josh Waitzkin",
+    details:{
+      language: "english",
+      description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+    }
+    },
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
   // Your code here:
-
+  return `${book.title} - ${book.author} - ${book.pages} pages`
 }
 
 
 
 // Iteration 3 | Delete Language
 // Your code here:
-
+for (let i = 0; i < booksArray.length; i++){
+  delete booksArray[i].details.language
+}
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+for (let i = 0; i < booksArray.length; i++){
+  booksArray[i].readingTime = (booksArray[i].pages*500)/90
+}
 
-
-
+console.log[booksArray]
 
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -85,16 +123,33 @@ const dictionary = {
         ["Blink", 287],
     ],
 };
-
-function booksByAuthor() {
+function booksByAuthor(dictionary) {
   // Your code here:
-  
+  let returnArray = []
+
+  for (let key in dictionary){
+    for (i = 0;i< dictionary[key].length;i++){
+      returnArray.push({
+        title:dictionary[key][i][0],
+        pages:dictionary[key][i][1],
+        author:key
+      }) 
+    }
+  }
+
+
+  return returnArray
 }
 
 
-
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
+function averagePageCount(booksArray) {
   // Your code here:
-  
+  let totalPages = 0
+  let avPage = 0
+  for (i = 0; i<booksArray.length;i++){
+  totalPages += booksArray[i].pages
+  }
+  avPage = totalPages/booksArray.length
+  return avPage
 }
