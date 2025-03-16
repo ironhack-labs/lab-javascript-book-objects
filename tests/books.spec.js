@@ -149,12 +149,12 @@ describe("BONUS: Iteration 5 | Books Dictionary", () => {
     });
 
     it("should return an array", () => {
-      expect(Array.isArray(booksByAuthor(testDictionary))).toBe(true);
+      expect(Array.isArray(booksByAuthor(dictionaryExample))).toBe(true);
     });
 
     it("should return array of book objects", () => {
-      const booksResult = booksByAuthor(testDictionary);
-      expect(booksResult.length).toEqual(4);
+      const booksResult = booksByAuthor(dictionaryExample);
+      expect(booksResult.length).toEqual(9);
 
       for (book of booksResult) {
         expect(typeof book).toBe("object");
