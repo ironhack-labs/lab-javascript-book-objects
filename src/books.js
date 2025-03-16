@@ -38,30 +38,73 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+
+
+{ title:'The old Man and the Sea',
+ pages: 128,
+ author: 'rnest Hemingway',
+ details: [
+    language = "English"
+ ]
+}
+
+ 
+,{ title: 'The Airbnb Story',
+ pages: 256,
+ author: 'Leight Gallagher',
+ details: [
+    language = "English"
+ ]
+}
+
+
+,{ title: 'Educated - A Memoir',
+  pages: 352,
+ author: 'Tara Westover',
+ details: [
+    language = "English"
+ ]
+}
+
+ 
+ 
+,{ title: 'The Art of Learning',
+ pages: 288,
+ author: 'Josh Waitzkin',
+ details: [
+    language = "English"
+]
+}
+
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
+function getBookDetails(book) {
+  let varios = booksArray.title + booksArray.
+  return ;
+  
+};
 
-}
 
-
+getBookDetails();
 
 // Iteration 3 | Delete Language
-// Your code here:
+
+delete booksArray.language;
 
 
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
 
 
 
+let readingTime = (booksArray.pages * 500) / 90;
+console.log(readingTime);
 
 // Bonus: Iteration 5 | Books Dictionary
 
