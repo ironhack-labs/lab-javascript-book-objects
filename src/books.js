@@ -40,17 +40,13 @@ const booksArray = [
 ];
 
 // Iteration 2 | Book Details
-function getBookDetails(books) {
-  let details = "";
-  for (let i=0; i<books.length; i++) { 
-    details += ` ${books[i].title} -  ${books[i].author} - ${books[i].pages}`
-  };
-  return details;
+function getBookDetails(book) {
+  
+   return `${book.title} -  ${book.author} - ${book.pages} pages`
+
   }
   console.log (getBookDetails(booksArray[0]));
    
-
-
 
 // Iteration 3 | Delete Language
 // Your code here:
@@ -64,7 +60,7 @@ console.log (booksArray);
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 booksArray.forEach(function (book) {
-book.details.readingTime = Math.ceil((book.pages * 500) / 90);
+book.readingTime = Math.ceil((book.pages * 500) / 90);
 });
 console.log (booksArray);
 
