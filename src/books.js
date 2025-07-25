@@ -83,8 +83,6 @@ details: {
 
 ];
 
-
-
 // Iteration 2 | Book Details
 
 function getBookDetails(book){
