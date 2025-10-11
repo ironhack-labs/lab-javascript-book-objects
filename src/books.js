@@ -144,7 +144,8 @@ console.log(booksByAuthor(dictionary))
   let pagesCount = 0
   let booksCount = 0
   for(let i = 0; i < books.length; i++){
-    pagesCount += books[i]
+    pagesCount += books[i].pages
     booksCount ++
   }
-  return Math.round(pagesCount / booksCount)} 
+  return pagesCount / books.length
+}
