@@ -138,8 +138,6 @@ console.log(booksByAuthor(dictionary))
 //   return pageCount/bookCount
 // }
 
-
-
  function averagePageCount(books) {
   let pagesCount = 0
   let booksCount = 0
