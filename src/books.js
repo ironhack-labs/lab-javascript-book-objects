@@ -38,27 +38,71 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+    {
+      title: "The Old Man and the Sea",
+      pages: 128,
+      author: "Ernest Hemingway",
+      details: {
+        language: "English",
+        description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+      }
+    },
+    {
+      title: "The Airbnb Story",
+      pages: 256,
+      author: "Leight Gallagher",
+      details: {
+        language: "English",
+        description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+      }
+    },
+    {
+      title: "Educated - A Memoir",
+      pages: 352,
+      author: "Tara Westover",
+      details: {
+        language: "English",
+        description: "Educated is an account of the struggle for self-invention..."
+      }
+    },
+    {
+      title: "The Art of Learning",
+      pages: 288,
+      author: "Josh Waitzkin",
+      details: {
+        language: "English",
+        description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+      }
+    },
 
-
-
+];
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
+function getBookDetails(book) {
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 
 }
 
-
-
 // Iteration 3 | Delete Language
-// Your code here:
-
-
+function deleteBookProperty(books){
+  return delete books.details.language;
+}
+booksArray.forEach(book => {
+  deleteBookProperty(book);
+})
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+const WORDS_PER_PAGE = 500;
+const WORDS_PER_MINUTE = 90;
+
+booksArray.forEach(book => {
+  const rawReadingTime = (book.pages * WORDS_PER_PAGE) / WORDS_PER_MINUTE;
+  const readingTime = Math.ceil(rawReadingTime);
+
+  book.readingTime = readingTime;
+})
 
 
 
