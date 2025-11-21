@@ -38,28 +38,109 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+{
+  title: "The Old Man and the Sea",
+  pages: 128,
+  author: "Ernest Hemingway",
+  details: {
+    language: "English",
+    description: "One of Hemingway's most famous works, it tells the story of Santiago...",
+  }
+},
+{
+  title: "The Airbnb Story",
+  pages: 256,
+  author: "Leight Gallagher",
+  details: {
+     language: "English",
+     description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...",
+  }
+},
+{
+  title: "Educated - A Memoir",
+  pages: 352,
+  author: "Tara Westover",
+  details: {
+     language: "English",
+     description: "Educated is an account of the struggle for self-invention...",
+  }
+},
+{
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: {
+     language: "English",
+     description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+  }
+},
+];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
+function getBookDetails(book) {
+  // Loop through all indexes of booksArray
+  for (let index in booksArray) {
+    const currentBook = booksArray[index];
 
+    // Checks if all properties match
+    let isSame = true;
+
+    // Loop through each property of the book object
+    for (let key in book) {
+      // If the property is an object (like details), we need to check its sub-properties
+      if (typeof book[key] === "object" && book[key] !== null) {
+        for (let subKey in book[key]) {
+          if (book[key][subKey] !== currentBook[key][subKey]) {
+            isSame = false;
+            break;
+          }
+        }
+      } else {
+        // Compare primitive properties (title, pages, author)
+        if (book[key] !== currentBook[key]) {
+          isSame = false;
+          break;
+        }
+      }
+    }
+
+    // If all properties match, return the formatted string
+    if (isSame) {
+      return `${currentBook.title} - ${currentBook.author} - ${currentBook.pages} pages`;
+    }
+  }
 }
 
+// Example:
+const exampleBook = {
+  title: "The Old Man and the Sea",
+  pages: 128,
+  author: "Ernest Hemingway",
+  details: {
+    language: "English",
+    description: "One of Hemingway's most famous works, it tells the story of Santiago...",
+  },
+};
+
+console.log(getBookDetails(exampleBook));
 
 
 // Iteration 3 | Delete Language
-// Your code here:
-
-
+for (let index in booksArray) {
+  delete booksArray[index].details.language;
+  console.log(booksArray[index]);
+}
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
 
+for (let index in booksArray) {
+  booksArray[index].readingTime = Math.ceil((booksArray[index].pages * 500) / 90);
+}
 
 
 
