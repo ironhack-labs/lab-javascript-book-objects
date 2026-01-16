@@ -38,27 +38,82 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    details: {
+      language: "English",
+      description: "One of Hemingway's most famous works, it tells the story of Santiago...",
+    }
+  },
+  { 
+      title: "The Airbnb Story",
+      pages: 256,
+      author: "Leight Gallagher",
+      details: {
+        language: "English",
+        description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb.",
+      }
+    },
+    { title: "Educated - A Memoir",
+      pages: 352,
+      author: "Tara Westover",
+      details: {
+        language: "English",
+        description: "Educated is an account of the struggle for self-invention...",
+      }
+    },
+    { title: "The Art of Learning",
+      pages: 288,
+      author: "Josh Waitzkin",
+      details: {      
+        language: "English",
+        description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure.",
+
+      } 
+    
+    }
+
+
+  ];
 
 
 
 
-// Iteration 2 | Book Details
-function getBookDetails() {
+// Iteration 2 | Book Details /*Create a function named getBookDetails() that takes one argument - the book object. The function should return a string in the following format:*/
+
+function getBookDetails(book) {
   // Your code here:
-
+  return `${book.title} - ${book.author} - ${book.pages} pages`;
 }
 
 
 
-// Iteration 3 | Delete Language
-// Your code here:
 
 
 
+
+// Iteration 3 | Delete Language//
+// Your code here://
+
+booksArray.forEach(book => {
+  delete book.details.language;
+});
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+
+booksArray.forEach(book => {
+  const readingTime = Math.ceil((book.pages * 500) / 90);
+  book.readingTime = readingTime;
+});
+
+
+
+
+
 
 
 
@@ -68,6 +123,8 @@ function getBookDetails() {
 /* The `dictionary` is an object containing books grouped by author. 
  The book info is stored in arrays with structure: [title, pages]. 
 */
+
+
 const dictionary = {
     "J. K. Rowling": [
         ["Harry Potter and the Philosopher's Stone", 223],
@@ -86,11 +143,9 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
+function booksByAuthor(dictionary) {
   // Your code here:
-  
 }
-
 
 
 // Bonus: Iteration 6 | Average Page Count
