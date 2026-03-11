@@ -38,7 +38,6 @@
 
 
 // Your code here:
-const booksArray = [];
 
 
 
