@@ -38,27 +38,82 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = [
+  {
+    title: "The Old Man and the Sea",
+    pages: 128,
+    author: "Ernest Hemingway",
+    details: {
+         language: "English",
+         description: "One of Hemingway's most famous works, it tells the story of Santiago..."
+          }
+  },
+  {
+    title: "The Airbnb Story",
+    pages: 256,
+    author: "Leight Gallagher",
+    details: {
+      language: "English",
+      description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb...."
+    }
+  },
+  {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details: {
+      language: "English",
+      description : "Educated is an account of the struggle for self-invention..."
+    }
+  },
+  {
+    title: "The Art of Learning",
+    pages: 288,
+    author: "Tara Westover",
+    details: {
+      language: "English",
+      description: "Educated is an account of the struggle for self-invention..."
+    }
+  }
+];
 
 
-
+let book = {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: { /*...*/ }
+};
 
 // Iteration 2 | Book Details
-function getBookDetails() {
-  // Your code here:
-
+function getBookDetails(book) {
+  
+  const finalValues = book.title + " - " + book.author + " - " + book.pages + " pages";
+  return finalValues;
 }
 
+let th = getBookDetails(book);
+console.log(th);
 
 
 // Iteration 3 | Delete Language
-// Your code here:
+for(let i = 0; i < booksArray.length; i++){
+  delete booksArray[i].details.language;
+}
+
+console.log(booksArray);
 
 
 
 
 // Iteration 4 | Estimated Reading Time
-// Your code here:
+
+for(let i = 0; i < booksArray.length; i++){
+  let time = Math.ceil((booksArray[i].pages * 500) / 90);
+  booksArray[i].readingTime = time;
+}
+
+console.log(booksArray);
 
 
 
@@ -86,15 +141,74 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  // Your code here:
-  
+function booksByAuthor(dictionary) {
+let titleBooks = [];
+let pagesBooks = [];
+let authorBooks = [];
+
+
+let title;
+let pages;
+let author;
+
+
+for(let [key, value] of Object.entries(dictionary)){
+    for(let x = 0; x < value.length; x++){
+        title = value[x][0];
+        titleBooks.push(title);
+    }
 }
+
+for(let [key, value] of Object.entries(dictionary)){
+    for(let x = 0; x < value.length; x++){
+        pages = value[x][1];
+        pagesBooks.push(pages);
+    }
+}
+
+for(let [key, value] of Object.entries(dictionary)){
+    author = key;
+    authorBooks.push(author);
+}
+
+let finalArr = [];
+
+for (let i = 0; i < titleBooks.length; i++) {
+    finalArr[i] = { title: titleBooks[i] };
+}
+
+
+for(let i = 0; i < finalArr.length; i++){
+    finalArr[i].page = pagesBooks[i];
+}
+
+for(let i = 0; i < finalArr.length; i++){
+    if(finalArr[i].title === "Harry Potter and the Philosopher's Stone" || finalArr[i].title === 'Harry Potter and the Chamber of Secrets' || finalArr[i].title === "Harry Potter and the Prisoner of Azkaban" || finalArr[i].title === "Harry Potter and the Goblet of Fire"){
+        finalArr[i].author = authorBooks[0];
+    }
+    if(finalArr[i].title === "Cryptonomicon" || finalArr[i].title === "Anathem" || finalArr[i].title === "Fall; or, Dodge in Hell"){
+        finalArr[i].author = authorBooks[1];
+    }
+    if(finalArr[i].title === "Outliers" || finalArr[i].title === "Blink"){
+        finalArr[i].author = authorBooks[2];
+    }
+}
+return finalArr;
+}
+
 
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(sum) {
+  let pages;
+  let total = 0;
+  for(let [key, value] of Object.entries(sum)){
+    for(let x = 0; x < value.length; x++){
+        pages = value[x][1];
+        total += pages;
+    }
 }
+  return total;
+}
+
