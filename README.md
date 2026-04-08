@@ -266,8 +266,8 @@ For example, if we pass the above `dictionaryExample` object as the argument, th
     title: "Harry Potter and the Prisoner of Azkaban",
     pages: 317,
     author: "J. K. Rowling",
-  },
-
+  }
+]
   // ...etc.
 
 ```
