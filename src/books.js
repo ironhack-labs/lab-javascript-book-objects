@@ -107,10 +107,11 @@ console.log(booksArray)
 
 
 // Iteration 4 | Estimated Reading Time
-
-booksArray.forEach(function(page){
-  page.readingtime = Math.ceil((page.pages*500)/90)
+booksArray.forEach(function(page) {
+page.readingtime = Math.ceil((page.pages*500)/90)
 })
+  
+
 console.log(booksArray)
 // Bonus: Iteration 5 | Books Dictionary
 
@@ -143,7 +144,11 @@ function booksByAuthor() {
 
 
 // Bonus: Iteration 6 | Average Page Count
-function averagePageCount() {
-  // Your code here:
-  
+function averagePageCount(page){
+  let totalpages = 0;
+for ( let i =0; i<page.length; i++){
+  totalpages+=page[i].pages;
 }
+return average = totalpages/page.length
+}
+console.log(averagePageCount(booksArray))
