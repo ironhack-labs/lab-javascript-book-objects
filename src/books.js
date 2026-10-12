@@ -38,15 +38,57 @@
 
 
 // Your code here:
-const booksArray = [];
+const booksArray = 
+
+[{
+  title: "The Old Man and the Sea", 
+  pages: 128, 
+  author: "Ernest Hemingway",
+  details: {
+        language: "English",
+        description: "One of Hemingway's most famous works, it tells the story of Santiago..."}
+},
+ 
+ {
+ title: "The Airbnb Story",
+ pages: 256,
+ author: "Leight Gallagher",
+ details: {
+   language: "English",
+   description: "This is the remarkable behind-the-scenes story of the creation and growth of Airbnb..."
+ }},
+
+ {
+    title: "Educated - A Memoir",
+    pages: 352,
+    author: "Tara Westover",
+    details: {
+      language: "English",
+      description: "Educated is an account of the struggle for self-invention..."
+ }
+  },
+
+ {
+  title: "The Art of Learning",
+  pages: 288,
+  author: "Josh Waitzkin",
+  details: {
+    language: "English",
+    description: "The Art of Learning takes readers through Waitzkin's unique journey to excellence. He explains in clear detail how a well-thought-out, principled approach to learning is what separates success from failure."
+ }
+  }
+
+  ];
 
 
 
 
 // Iteration 2 | Book Details
-function getBookDetails() {
+function getBookDetails(book) {
   // Your code here:
+ let string = `${book.title} - ${book.author} - ${book.pages} pages`;
 
+ return string;
 }
 
 
@@ -54,11 +96,24 @@ function getBookDetails() {
 // Iteration 3 | Delete Language
 // Your code here:
 
+delete booksArray[0].details.language;
+delete booksArray[1].details.language;
+delete booksArray[2].details.language;
+delete booksArray[3].details.language;
+
+console.log(booksArray);
+
 
 
 
 // Iteration 4 | Estimated Reading Time
 // Your code here:
+
+booksArray.forEach(element => {
+  element.readingTime = Math.ceil((element.pages * 500) / 90);
+});
+
+console.log(booksArray);
 
 
 
@@ -83,13 +138,50 @@ const dictionary = {
     "Malcolm Gladwell": [
         ["Outliers", 320],
         ["Blink", 287],
-    ],
+    ]
 };
 
-function booksByAuthor() {
+
+
+function booksByAuthor(objbook) {
   // Your code here:
-  
+
+  let arrResult =[];
+
+  let claves = Object.keys(objbook);
+
+  let valores = Object.values(objbook);
+
+  for (let i = 0; i < valores.length; i++){
+    
+    let subValor = valores[i];
+
+    for (let j=0; j < subValor.length ; j++){
+
+      arrResult.push({
+          title: subValor[j][0],
+          pages: subValor[j][1],
+          author: claves[i]
+        });
+    }
+
+      
+};
+
+return arrResult;
 }
+
+ /*
+ arrResult.push({
+          title: el[0],
+          pages: el[1],
+          author: ''
+        })
+ */ 
+  
+console.log(booksByAuthor(dictionary));
+
+
 
 
 
