@@ -103,7 +103,9 @@ console.log(booksArray)
 // Iteration 4 | Estimated Reading Time
 // Your code here:
 
-
+booksArray.forEach((book)=> {
+  book.readingTime=Math.ceil((book.pages*500)/90)
+})
 
 
 // Bonus: Iteration 5 | Books Dictionary
@@ -129,11 +131,21 @@ const dictionary = {
     ],
 };
 
-function booksByAuthor() {
-  booksArray.forEach((book)=> {
-    book.readingTime=Math.ceil((book.pages*500)/90)
+function booksByAuthor(dictionary) { 
+
+  let result = [];
+
+  Object.keys(dictionary).forEach((author) => {
+    dictionary[author].forEach((book) => {
+      result.push({
+        title:book[0],
+        pages:book[1],
+        author: author
+      });
+    })
   })
-  
+
+  return: result
 }
 
 
